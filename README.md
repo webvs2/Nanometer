@@ -19,6 +19,7 @@ npm i message-yang
 ```
 
 <h2 align="left">Documentation</h2>
+
 * Common ant es6:
 
 ```javascript
@@ -39,6 +40,7 @@ npm i message-yang
 
 
 <h2 align="left">Issues</h2>
+
 在使用中有任何问题，欢迎反馈给我，可以用以下联系方式跟我交流
 
 * 邮件(2636098325@qq.com)
