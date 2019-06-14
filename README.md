@@ -9,7 +9,7 @@
 * 更好的消息提示
 * 完善UI库
 
-<h2 align="center">Install</h2>
+<h2 align="left">Install</h2>
 
 Install with npm:
 
@@ -17,7 +17,7 @@ Install with npm:
 npm i message-yang 
 ```
 
-<h2 align="center">Documentation</h2>
+<h2 align="left">Documentation</h2>
 ```javascript
  import  element from'./element.js' 
  Common的var MessageBox = require('MessageBox')
