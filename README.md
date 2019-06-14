@@ -1,4 +1,4 @@
-##MaHua是什么?
+##MessageBox是什么?
 * 单纯消息提示框，适用于更好的消息提示或者小组件.
 * 效果如https://element.eleme.cn/2.0/#/zh-CN/component/message#message-xiao-xi-ti-shi，欢迎提交lssues,更好完善;
 
