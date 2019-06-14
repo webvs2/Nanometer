@@ -3,6 +3,7 @@
 * 效果如https://element.eleme.cn/2.0/#/zh-CN/component/message#message-xiao-xi-ti-shi，欢迎提交lssues,更好完善;
 
 <h2 align="left">Claims the melon<MessageBox有哪些功能？ ></h2>
+ 
 * 简单易用
 * 更好的消息提示
 * 完善UI库
