@@ -17,9 +17,7 @@ Install with npm:
 npm i message-yang 
 ```
 
-
-##关于使用
-
+<h2 align="center">Documentation</h2>
 ```javascript
  import  element from'./element.js' 
  Common的var MessageBox = require('MessageBox')
@@ -36,7 +34,7 @@ npm i message-yang
 
 
 
-##有问题反馈
+##Issues
 在使用中有任何问题，欢迎反馈给我，可以用以下联系方式跟我交流
 
 * 邮件(2636098325@qq.com)
