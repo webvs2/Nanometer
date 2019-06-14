@@ -16,7 +16,8 @@ Install with npm:
 npm i message-yang 
 ```
 
-
+<h2 align="left">Documentation</h2>
+Common ant es6
 
 ```javascript
  import  element from'./element.js' 
