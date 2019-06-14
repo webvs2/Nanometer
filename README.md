@@ -16,10 +16,11 @@ Install with npm:
 npm i message-yang 
 ```
 
-<h2 align="left">Documentation</h2>
+
+
 ```javascript
  import  element from'./element.js' 
- Common的var MessageBox = require('MessageBox')
+  Common :var MessageBox = require('MessageBox')
  MessageBox('error', 'messges')
 ```
 * 类似于vue:
