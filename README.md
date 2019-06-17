@@ -7,8 +7,8 @@
 <h2 align="left">Claims the melon<MessageBox有哪些功能？ ></h2>
  
 * 简单易用
-* 更好的消息提示
-* 完善UI库
+* 更好的消息提示，四种场景选择（后期加入自定义）
+* 添加到您的UI库用于完善
 
 <h2 align="left">Install</h2>
 
@@ -28,11 +28,10 @@ npm i message-yang
  MessageBox('error', 'messges')
 ```
 * 类似于vue:
-
+暂时先这样，等着整合一下到use
 ```javascript
- import  element from'./element.js' 
- Common的var MessageBox = require('MessageBox')
- MessageBox('error', 'messges')
+import MessageBox from 'MessageBox';
+Vue.prototype.$meessage = MessageBox
 ```
 
 
@@ -41,7 +40,7 @@ npm i message-yang
 
 <h2 align="left">Issues</h2>
 
-在使用中有任何问题，欢迎反馈给我，可以用以下联系方式跟我交流
+现在的只是一个小小雏形，我希望项目多多成长，在使用中有任何问题或者好的创意想法，欢迎反馈给我，可以用以下联系方式跟我交流
 
 * 邮件联系(2636098325@qq.com)
 * 提交issues
@@ -54,7 +53,7 @@ npm i message-yang
 
 <h2 align="left">感激</h2>
 
-各位帮我完善的,我会展示这里的
+ 各位帮我完善的,我会展示这里的
 
 
 
