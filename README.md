@@ -2,7 +2,7 @@
 
 
 * 单纯消息提示框，适用于更好的消息提示或者小组件。
-* 效果如 <a herf=" https://element.eleme.cn/2.0/#/zh-CN/component/message#message-xiao-xi-ti-shi">  https://element.eleme.cn/2.0/#/zh-CN/component/message#message-xiao-xi-ti-shi</a> ,欢迎提交lssues,更好完善。
+* 效果如 <a herf=" https://element.eleme.cn/2.0/#/zh-CN/component/message#message-xiao-xi-ti-shi" target='target'>  https://element.eleme.cn/2.0/#/zh-CN/component/message#message-xiao-xi-ti-shi</a> ,欢迎提交lssues,更好完善。
 
 <h2 align="left">Claims the melon<MessageBox有哪些功能？ ></h2>
  
