@@ -1,6 +1,6 @@
-<h2 align="centre">What is MessageBox?</h2>
+<h2 align="centre">What is nanometer-message?</h2>
 
-
+ 
 * 单纯消息提示框，适用于更好的消息提示或者小组件。
 * 效果如 <a herf=" https://element.eleme.cn/2.0/#/zh-CN/component/message#message-xiao-xi-ti-shi" target='target'>  https://element.eleme.cn/2.0/#/zh-CN/component/message#message-xiao-xi-ti-shi</a> ,欢迎提交lssues,更好完善。
 
@@ -15,7 +15,7 @@
 Install with npm:
 
 ```bash
-npm i nanometer-message
+npm i message-yang 
 ```
 
 <h2 align="left">Documentation</h2>
@@ -23,18 +23,21 @@ npm i nanometer-message
 * Common ant es6:
 
 ```javascript
- import  element from'./element.js' 
-  Common :var MessageBox = require('MessageBox')
- MessageBox('error', 'messges')
+ import  Message from'nanometer-message' 
+  Common :var Message = require('nanometer-message')
+  Message('error', 'messges')
 ```
 * 类似于vue:
-暂时先这样，等着整合一下到use
 ```javascript
-import MessageBox from 'MessageBox';
-Vue.prototype.$meessage = MessageBox
+import Message from 'nanometer-message';
+Vue.prototype.$meessage = Message
 ```
 
+<h2 align="left">API</h2>
 
+```bash
+ Message(String, messges)
+```
 
 
 
