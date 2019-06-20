@@ -15,7 +15,7 @@
 Install with npm:
 
 ```bash
-npm i message-yang 
+npm i nanometer-message
 ```
 
 <h2 align="left">Documentation</h2>
