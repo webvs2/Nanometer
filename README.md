@@ -24,12 +24,14 @@ npm i nanometer-message
 
 ```javascript
  import  Message from'nanometer-message' 
+  import "nanometer-message/src/style.scss"
   Common :var Message = require('nanometer-message')
   Message('error', 'messges')
 ```
 * 类似于vue:
 ```javascript
 import Message from 'nanometer-message';
+ import "nanometer-message/src/style.scss"
 Vue.prototype.$meessage = Message
 ```
 
