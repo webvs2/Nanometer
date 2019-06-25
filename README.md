@@ -7,7 +7,11 @@
 <h2 align="left">Claims the melon<MessageBox有哪些功能？ ></h2>
  
 * 简单易用
+<<<<<<< HEAD
 * 更好的消息提示，四种场景选择（后期加入自定义）
+=======
+* 更好的消息提示，四种场景选择
+>>>>>>> first commit
 * 添加到您的UI库用于完善
 
 <h2 align="left">Install</h2>
@@ -22,6 +26,7 @@ npm i nanometer-message
 
 * Common ant es6:
 
+<<<<<<< HEAD
 ```javascript
  import  Message from'nanometer-message' 
   import "nanometer-message/src/style.scss"
@@ -32,23 +37,68 @@ npm i nanometer-message
 ```javascript
 import Message from 'nanometer-message';
  import "nanometer-message/src/style.scss"
+=======
+
+```js
+ import  Message from'nanometer-message' 
+ import "nanometer-message/src/style.scss"
+ CommonJS :   var Message = require('nanometer-message')
+ Message('error', 'messges')
+```
+* 类似于vue:
+
+```js
+import Message from 'nanometer-message';
+import "nanometer-message/src/style.scss"
+>>>>>>> first commit
 Vue.prototype.$meessage = Message
 ```
 
 <h2 align="left">API</h2>
 
+<<<<<<< HEAD
+=======
+* 加入了对象自定义的模式，之前的的使用方式不变，需要更灵活的使用option
+* The pattern of object customization has been added. The previous way of use remains the same, which requires more flexible use of option
+
+>>>>>>> first commit
 ```bash
  Message(String, messges)
 ```
 
+<<<<<<< HEAD
 
 
 <h2 align="left">Issues</h2>
 
+=======
+```bash
+ Message({option})
+```
+|Name|Description|
+|:--:|:----------|
+|[type]|The current state of the message.|
+|[animationDuration]|Buffer animation duration(The default for 3 seconds)|
+|[egoClass]|CSS state customization|
+|[context]| Message content.Please note: this is a must|
+
+
+
+
+<h2 align="left">Issues</h2>
+承蒙各位厚爱，我将小组件升级了一下。
+>>>>>>> first commit
 现在的只是一个小小雏形，我希望项目多多成长，在使用中有任何问题或者好的创意想法，欢迎反馈给我，可以用以下联系方式跟我交流
 
 * 邮件联系(2636098325@qq.com)
 * 提交issues
+<<<<<<< HEAD
+=======
+* 请访问 github地址 <a herf="https://github.com/webvs2/Nanometer"> https://github.com/webvs2/Nanometer</a>
+* 请访问 网址<a herf="https://webvs2.github.io/Nanometer/">https://webvs2.github.io/Nanometer/</a>
+
+
+>>>>>>> first commit
 
 <h2 align="left">捐助开发者</h2>
 

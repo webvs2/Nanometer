@@ -1,0 +1,32 @@
+{
+	"name": "nanometer-message",
+	"version": "1.1.3",
+	"description": "Simple message prompts",
+	"main": "index.js",
+	"style": "lib/style.css",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"cleanLib": "./node_modules/.bin/rimraf lib",
+		"bableBuild": "./node_modules/.bin/babel src --out-dir lib",
+		"prepublish": "npm run cleanLib && npm run bableBuild"
+	},
+	"files": [
+		"lib",
+		"src"
+	],
+	"keywords": [
+		"message",
+		"nanometer-message",
+		"nanometerMessage"
+	],
+	"author": "nanomster",
+	"license": "ISC",
+	"devDependencies": {
+		"babel-cli": "^6.26.0",
+		"babel-preset-es2015": "^6.24.1",
+		"rimraf": "^2.6.3"
+	},
+	"dependencies": {
+		"mocha": "^6.1.4"
+	}
+}
