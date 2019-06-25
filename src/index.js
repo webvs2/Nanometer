@@ -27,6 +27,7 @@
 
 			})
 		}
+//		console.log(馒头)
 		closeSingle(id, userOnClose) {
 			this.store.forEach((item, i) => {
 				if(id === item.id) {
