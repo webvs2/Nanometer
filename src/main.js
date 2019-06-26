@@ -47,20 +47,7 @@
 			cardinalNumber = parseInt(instances.length / 10);;
 
 		function MessageConstructor(data) {
-			//		let data = {
-			//			visible: false,
-			//			message: '', //消息文字
-			//			duration: 3000, //显示时间, 毫秒。设为 0 则不会自动关闭
-			//			type: 'info',
-			//			iconClass: '', //自定义图标的类名，会覆盖 type
-			//			customClass: '', //自定义类名
-			//			onClose: null,
-			//			showClose: false, //是否显示关闭按钮
-			//			closed: false, //用来判断消息提示弹窗是否关闭
-			//			timer: null,
-			//			dangerouslyUseHTMLString: false, //是否将 message 属性作为 HTML 片段处理
-			//			center: false
-			//		},c=c||{};
+	
 			var div = document.createElement('div');
 			div.className = ('alert-' + type) + ' alert  me-alert';
 			div.role = 'alert';
