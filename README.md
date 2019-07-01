@@ -28,7 +28,7 @@ npm i nanometer-message
 
 ```js
  import  Message from'nanometer-message' 
- import "nanometer-message/src/style.scss"
+ import "nanometer-message/lib/style.css"
  CommonJS :   var Message = require('nanometer-message')
  Message('error', 'messges')
 ```
@@ -36,7 +36,7 @@ npm i nanometer-message
 
 ```js
 import Message from 'nanometer-message';
-import "nanometer-message/src/style.scss"
+import "nanometer-message/lib/style.css"
 
 Vue.prototype.$meessage = Message
 ```
