@@ -27,7 +27,6 @@
 
 			})
 		}
-//		console.log(馒头)
 		closeSingle(id, userOnClose) {
 			this.store.forEach((item, i) => {
 				if(id === item.id) {
@@ -50,8 +49,8 @@
 
 
 	let defaultOption = {
-		type: 'error',
-		animationDuration: 3,
+		type: 'info',
+		animationDuration: 2.5,
 		egoClass: '',
 		context: '',
 		destroy: () => {
