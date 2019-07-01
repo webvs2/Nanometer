@@ -1,6 +1,6 @@
 {
 	"name": "nanometer-message",
-	"version": "1.1.4",
+	"version": "1.2.0",
 	"description": "Simple message prompts",
 	"main": "index.js",
 	"style": "lib/style.css",
@@ -8,7 +8,7 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"cleanLib": "./node_modules/.bin/rimraf lib",
 		"bableBuild": "./node_modules/.bin/babel src --out-dir lib",
-		 "bableSass":"sass src/style.scss:lib/style.css --style compressed",
+		"bableSass": "sass src/style.scss:lib/style.css --style compressed",
 		"prepublish": "npm run cleanLib && npm run bableBuild && npm run bableSass "
 	},
 	"files": [
