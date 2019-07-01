@@ -8,7 +8,8 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"cleanLib": "./node_modules/.bin/rimraf lib",
 		"bableBuild": "./node_modules/.bin/babel src --out-dir lib",
-		"prepublish": "npm run cleanLib && npm run bableBuild  "
+		 "bableSass":"sass src/style.scss:lib/style.css --style compressed",
+		"prepublish": "npm run cleanLib && npm run bableBuild && npm run bableSass "
 	},
 	"files": [
 		"lib",
