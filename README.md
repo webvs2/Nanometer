@@ -63,7 +63,7 @@ Vue.prototype.$meessage = Message
 ```
 |Name|Description|
 |:--:|:----------|
-|[type]|The current state of the message.|
+|[type]|The current state of the message. [success,warning,info,error]|
 |[animationDuration]|Buffer animation duration(The default for 3 seconds)|
 |[egoClass]|CSS state customization|
 |[context]| Message content.Please note: this is a must|
