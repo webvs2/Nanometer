@@ -13,6 +13,12 @@
 * 添加到您的UI库用于完善
 
 <h2 align="left">Install</h2>
+Install with script:
+
+```bash
+<script src="index.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css" />
+```
 
 Install with npm:
 
