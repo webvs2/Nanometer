@@ -59,11 +59,6 @@ Vue.prototype.$meessage = Message
 ```
 
 
-
-
-<h2 align="left">Issues</h2>
-
-
 ```bash
  Message({option})
 ```
