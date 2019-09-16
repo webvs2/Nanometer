@@ -1,6 +1,6 @@
 {
 	"name": "nanometer-message",
-	"version": "1.4.5",
+	"version": "1.4.6",
 	"description": "Simple message prompts",
 	"main": "index.js",
 	"style": "lib/style.css",
