@@ -1,6 +1,6 @@
 {
 	"name": "nanometer-message",
-	"version": "1.4.3",
+	"version": "1.4.4",
 	"description": "Simple message prompts",
 	"main": "index.js",
 	"style": "lib/style.css",
@@ -11,7 +11,6 @@
 		"bableSass": "sass src/style.scss:lib/style.css --style compressed",
 		"prepublish": "npm run cleanLib && npm run bableBuild && npm run bableSass ",
 		"webpackBuild": "webpack --config webpack.config.js"
-		
 	},
 	"files": [
 		"lib",
