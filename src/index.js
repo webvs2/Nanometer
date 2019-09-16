@@ -30,7 +30,6 @@
 		closeSingle(id, userOnClose) {
 			this.store.forEach((item, i) => {
 				if(id === item.id) {
-
 					if(typeof userOnClose === 'function') {
 						userOnClose(item);
 					}
@@ -53,9 +52,7 @@
 		animationDuration: 2.5,
 		egoClass: '',
 		context: '',
-		destroy: () => {
-
-		}
+		destroy:''
 	};
 
 	function isObject(obj) {
@@ -100,7 +97,7 @@
 		element.className += ' entranceBox';
 
 		setTimeout(function() {
-			instances.closeSingle(id);
+			instances.closeSingle(id,option.destroy);
 		}, parseInt(option.animationDuration*1000));
 	};
 

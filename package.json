@@ -9,7 +9,9 @@
 		"cleanLib": "./node_modules/.bin/rimraf lib",
 		"bableBuild": "./node_modules/.bin/babel src --out-dir lib",
 		"bableSass": "sass src/style.scss:lib/style.css --style compressed",
-		"prepublish": "npm run cleanLib && npm run bableBuild && npm run bableSass "
+		"prepublish": "npm run cleanLib && npm run bableBuild && npm run bableSass ",
+		"webpackBuild": "webpack --config webpack.config.js"
+		
 	},
 	"files": [
 		"lib",
