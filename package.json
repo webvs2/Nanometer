@@ -10,7 +10,8 @@
 		"bableBuild": "./node_modules/.bin/babel src --out-dir lib",
 		"bableSass": "sass src/style.scss:lib/style.css --style compressed",
 		"prepublish": "npm run cleanLib && npm run bableBuild && npm run bableSass ",
-		"webpackBuild": "webpack --config webpack.config.js"
+		"webpackBuild": "webpack --config webpack.config.js",
+		"mochaUI": "mocha-phantomjs --path ./text/index.js ./test/index.html"
 	},
 	"files": [
 		"lib",
@@ -26,9 +27,14 @@
 	"devDependencies": {
 		"babel-cli": "^6.26.0",
 		"babel-preset-es2015": "^6.24.1",
+		"baby-ajax": "^1.6.11",
 		"braces": ">=2.3.1",
+		"chai": "^4.2.0",
 		"mixin-deep": "^2.0.1",
-		"rimraf": "^2.6.3"
+		"mocha-phantomjs": "^4.1.0",
+		"mocha-phantomjs-core": "^2.1.2",
+		"rimraf": "^2.6.3",
+		"set-value": "^3.0.1"
 	},
 	"dependencies": {
 		"mocha": "^6.1.4"
