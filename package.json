@@ -37,6 +37,7 @@
 		"set-value": "^3.0.1"
 	},
 	"dependencies": {
-		"mocha": "^6.1.4"
+		"mocha": "^6.1.4",
+		"set-value": "^3.0.1"
 	}
 }
