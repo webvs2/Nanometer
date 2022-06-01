@@ -1,0 +1,123 @@
+/*! Pengpeng */
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/.pnpm/css-loader@6.7.1_webpack@5.72.1/node_modules/css-loader/dist/cjs.js!./node_modules/.pnpm/postcss-loader@7.0.0_xvg4ntyrrwt57qzvggqcbeozu4/node_modules/postcss-loader/dist/cjs.js!./node_modules/.pnpm/sass-loader@13.0.0_sass@1.52.1+webpack@5.72.1/node_modules/sass-loader/dist/cjs.js!./src/style.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+#mocha {
+  border: solid red 1px;
+}
+
+.nan-alert {
+  font-size: 14px;
+  min-width: 380px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  position: fixed;
+  left: 50%;
+  background-color: #edf2fc;
+  color: #909399;
+  border: solid #ebeef5 1px;
+  transform: translateX(-50%);
+  overflow: hidden;
+  padding: 15px 15px 15px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.entranceBox {
+  animation-timing-function: cubic-bezier(0.58, 0.72, 0.53, 0.67);
+  -webkit-animation-timing-function: cubic-bezier(0.58, 0.72, 0.53, 0.67);
+  -webkit-animation-name: entrance;
+          animation-name: entrance;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.leaveBox {
+  animation-timing-function: ease-out;
+  -webkit-animation-timing-function: ease-out;
+  -webkit-animation-name: leave;
+          animation-name: leave;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes entrance {
+  0% {
+    opacity: 0.4;
+    top: -20px;
+  }
+  8% {
+    opacity: 1;
+    top: 20px;
+  }
+  90% {
+    opacity: 1;
+    top: 20px;
+  }
+  100% {
+    opacity: 0.2;
+    top: -10px;
+  }
+}
+
+@keyframes entrance {
+  0% {
+    opacity: 0.4;
+    top: -20px;
+  }
+  8% {
+    opacity: 1;
+    top: 20px;
+  }
+  90% {
+    opacity: 1;
+    top: 20px;
+  }
+  100% {
+    opacity: 0.2;
+    top: -10px;
+  }
+}
+@-webkit-keyframes leave {
+  from {
+    opacity: 1;
+    top: 20px;
+  }
+  to {
+    opacity: 0;
+    top: -20px;
+  }
+}
+@keyframes leave {
+  from {
+    opacity: 1;
+    top: 20px;
+  }
+  to {
+    opacity: 0;
+    top: -20px;
+  }
+}
+.alert-success {
+  background-color: #f0f9eb !important;
+  color: #67c23a !important;
+  border: solid #e1f3d8 1px !important;
+}
+
+.alert-warning {
+  background-color: #fdf6ec !important;
+  color: #e6a23c !important;
+  border: solid #faecd8 1px !important;
+}
+
+.alert-info {
+  background-color: #edf2fc !important;
+  color: #909399 !important;
+  border: solid #ebeef5 1px !important;
+}
+
+.alert-error {
+  background-color: #fef0f0 !important;
+  color: #f56c6c !important;
+  border: solid #fde2e2 1px !important;
+}

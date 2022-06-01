@@ -28,7 +28,6 @@ specifiers:
   rimraf: ^2.7.1
   sass: ^1.52.1
   sass-loader: ^13.0.0
-  set-value: ^3.0.2
   source-map-loader: ^3.0.1
   style-loader: ^3.3.1
   webpack: ^5.72.1
@@ -43,7 +42,6 @@ dependencies:
   extract-text-webpack-plugin: 3.0.2_webpack@5.72.1
   mocha: 6.2.3
   resource-hints-webpack-plugin: 0.0.2
-  set-value: 3.0.2
   source-map-loader: 3.0.1_webpack@5.72.1
   webpack-bundle-analyzer: 4.5.0
 
@@ -6377,13 +6375,6 @@ packages:
       is-extendable: 0.1.1
       is-plain-object: 2.0.4
       split-string: 3.1.0
-
-  /set-value/3.0.2:
-    resolution: {integrity: sha512-npjkVoz+ank0zjlV9F47Fdbjfj/PfXyVhZvGALWsyIYU/qrMzpi6avjKW3/7KeSU2Df3I46BrN1xOI1+6vW0hA==}
-    engines: {node: '>=6.0'}
-    dependencies:
-      is-plain-object: 2.0.4
-    dev: false
 
   /setprototypeof/1.1.0:
     resolution: {integrity: sha512-BvE/TwpZX4FXExxOxZyRGQQv651MSwmWKZGqvmPcRIjDqWub67kTKuIMx43cZZrS/cBBzwBcNDWoFxt2XEFIpQ==}
