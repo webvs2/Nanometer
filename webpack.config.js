@@ -10,8 +10,8 @@ const {
 	CleanWebpackPlugin
 } = require('clean-webpack-plugin');
 const ResourceHintWebpackPlugin = require('resource-hints-webpack-plugin');
-const isProduction = true
-console.log('process.env.NODE_ENV ',process.env.NODE_ENV )
+const isProduction = false
+console.log('process.env.NODE_ENV ', process.env.NODE_ENV)
 // process.env.NODE_ENV == "production";
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const stylesHandler = isProduction ?
@@ -22,8 +22,13 @@ const config = {
 	mode: 'production',
 	entry: {
 		main: ['./src/style.scss', "./src/main.js"],
+		hot: 'webpack/hot/dev-server.js',
+		client: 'webpack-dev-server/client/index.js?hot=true&live-reload=true',
 	},
-
+	// watchOptions: {
+	// 	aggregateTimeout: 600,
+	// 	ignored: '**/node_modules',
+	// },
 	output: {
 		publicPath: './',
 		library: 'Message',
@@ -31,9 +36,17 @@ const config = {
 		path: path.resolve(__dirname, "dist"),
 	},
 	devServer: {
+		static: {
+			directory: path.join(__dirname, 'dist'),
+		},
+		  client: {
+		      progress: true,
+		    },
 		open: true,
 		host: "localhost",
-		hot:true
+		// hot: true,
+		liveReload:true,
+		client: false,
 	},
 	plugins: [
 		// new CleanWebpackPlugin(),
@@ -42,9 +55,8 @@ const config = {
 		}),
 		// new MiniCssExtractPlugin(),
 		new ResourceHintWebpackPlugin(),
-		// new webpack.NamedModulesPlugin(),
-		// new webpack.HotModuleReplacementPlugin(),
-		new webpack.BannerPlugin('Pengpeng')
+
+		// new webpack.BannerPlugin('Pengpeng')
 	],
 	module: {
 		rules: [{
@@ -80,13 +92,16 @@ module.exports = () => {
 	if (isProduction) {
 		config.mode = "production";
 		// new MiniCssExtractPlugin(),
-		config.plugins.push(new MiniCssExtractPlugin(),
+		config.plugins.push(
+			new MiniCssExtractPlugin(),
 			new BundleAnalyzerPlugin(),
+			new webpack.BannerPlugin('Pengpeng')
 		);
 	} else {
 		config.mode = "development";
+		// config.watch = true;
 		config.plugins.push(
-				new webpack.HotModuleReplacementPlugin(),
+			new webpack.HotModuleReplacementPlugin(),
 		)
 
 	}
