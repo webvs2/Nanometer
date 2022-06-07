@@ -40,7 +40,9 @@ class storeSteward {
 	}
 
 }
-
+class msgObj{
+	
+}
 let instances = new storeSteward([]);
 
 
