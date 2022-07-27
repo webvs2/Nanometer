@@ -1,13 +1,13 @@
 <h2 align="centre">What is nanometer-message?</h2>
 
- 
-* 适用于更好的消息提示或者小组件。
+
+* 更好的消息提示。
 
 <h2 align="left">Claims the melon<MessageBox有哪些功能？ ></h2>
- 
+
 * 简单易用
 
-* 更好的消息提示，四种场景选择，可以使用自定义
+* 更好的消息提示，内置四种场景，支持使用自定义
 
 * 添加到您的UI库用于完善
 
@@ -15,8 +15,8 @@
 Install with script:
 
 ```bash
-<script src="index.js"></script>
-<link rel="stylesheet" type="text/css" href="style.css" />
+<script src="build.js"></script>
+<link rel="stylesheet" type="text/css" href="build.css" />
 ```
 
 Install with npm:
@@ -34,15 +34,15 @@ npm i nanometer-message
 ```js  
 var Message = require('nanometer-message')
 <link rel="stylesheet" type="text/css" href="style.css" />
- Message({option})
+ Message({option})    为每个 type 定义了各自的方法，如 Message.success(options)。
 ```
 * 类似于vue:
 
 ```js
 import Message from 'nanometer-message';
-import "nanometer-message/lib/style.css"
+import "nanometer-message/build/build.css"
 
-Vue.prototype.$meessage = Message
+Vue.prototype.$meessage = Message（Vue2）  为每个 type 定义了各自的方法，如 Message.success(options)。
 ```
 
 <h2 align="left">API</h2>

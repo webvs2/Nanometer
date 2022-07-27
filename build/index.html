@@ -24,7 +24,16 @@
         // window._=31325
         // MyBundle()
         document.getElementById('button').onclick=function(){
-            console.log($message('success',1))
+            // console.log($message('success',1))
+        $message({
+                type:'success',
+                egoClass:'yang',
+                context:'成功了',
+                destroy:function(){
+                    console.log('终于成功了')
+                }
+            })
+
         }
         document.getElementById('buttonsuccess').onclick=function(){
          $message.success('成功消息')
