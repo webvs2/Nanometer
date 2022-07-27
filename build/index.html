@@ -10,10 +10,20 @@
 <body>
     
     <h1 style="color: red; text-align: center;margin-top: 100px; ">Rollup</h1>
+    <button id="button" >消息</button>
+    <button id="buttonsuccess" >成功消息</button>
+
     <script src="./bundle.js"></script>
     <script>
         // window._=31325
-        MyBundle()
+        // MyBundle()
+        document.getElementById('button').onclick=function(){
+            console.log($message('success',1))
+        }
+        document.getElementById('buttonsuccess').onclick=function(){
+            console.log($message.error('111'))
+            // $message.success(1)
+        }
         // console.log(MyBundle())
     </script>
 </body>
