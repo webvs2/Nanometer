@@ -29,8 +29,6 @@ npm i nanometer-message
 
 * Common ant es6:
 
-
-
 ```js  
 var Message = require('nanometer-message')
 <link rel="stylesheet" type="text/css" href="style.css" />
@@ -51,13 +49,17 @@ Vue.prototype.$meessage = Message（Vue2）  为每个 type 定义了各自的�
 
 
 ```bash
- Message(String, messges)
+ Message(type, context)
 ```
 
+```
+Message.success(context)。
+```
 
 ```bash
  Message({option})
 ```
+
 |Name|Description|
 |:--:|:----------|
 |[type]|The current state of the message. [success,warning,info,error]|
@@ -72,7 +74,7 @@ Vue.prototype.$meessage = Message（Vue2）  为每个 type 定义了各自的�
 <h2 align="left">Contact the author</h2>
 
 * 邮件联系(2636098325@qq.com)
-* 提交issues
+* 提交issueshttps://github.com/webvs2/Nanometer/issues
 * 请访问 github地址 <a herf="https://github.com/webvs2/Nanometer"> https://github.com/webvs2/Nanometer</a>
 * 请访问 网址<a herf="https://webvs2.github.io/Nanometer/">https://webvs2.github.io/Nanometer/</a>
 
