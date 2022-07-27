@@ -12,6 +12,12 @@
     <h1 style="color: red; text-align: center;margin-top: 100px; ">Rollup</h1>
     <button id="button" >消息</button>
     <button id="buttonsuccess" >成功消息</button>
+    <button id="buttonerror" >错误消息</button>
+
+    <button id="buttoninfo" >普通消息</button>
+
+    <button id="buttonwarning" >警告消息</button>
+
 
     <script src="./bundle.js"></script>
     <script>
@@ -21,10 +27,17 @@
             console.log($message('success',1))
         }
         document.getElementById('buttonsuccess').onclick=function(){
-            console.log($message.error('111'))
-            // $message.success(1)
+         $message.success('成功消息')
         }
-        // console.log(MyBundle())
+        document.getElementById('buttonerror').onclick=function(){
+         $message.error('错误消息')
+        }
+        document.getElementById('buttoninfo').onclick=function(){
+         $message.info('普通消息')
+        }
+        document.getElementById('buttonwarning').onclick=function(){
+         $message.warning('警告消息')
+        }
     </script>
 </body>
 </html>

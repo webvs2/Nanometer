@@ -50,7 +50,7 @@
     top: 20px;
   }
   100% {
-    opacity: 0.8;
+    opacity: 0.4;
     top: -100px;
   }
 }
@@ -65,25 +65,25 @@
   }
 }
 .alert-success {
-  background-color: #00C9A7 !important;
-  color: #C7FCEC !important;
-  border: solid #00C9A7 1px !important;
+  background-color: #00C9A7;
+  color: #C7FCEC;
+  border: solid #00C9A7 1px;
 }
 
 .alert-warning {
-  background-color: #fdf6ec !important;
-  color: #e6a23c !important;
-  border: solid #faecd8 1px !important;
+  background-color: #FFA963;
+  color: #fff;
+  border: solid #FFB38C 1px;
 }
 
 .alert-info {
-  background-color: #edf2fc !important;
-  color: #909399 !important;
-  border: solid #ebeef5 1px !important;
+  background-color: #edf2fc;
+  color: #909399;
+  border: solid #ebeef5 1px;
 }
 
 .alert-error {
-  background-color: #fef0f0 !important;
-  color: #f56c6c !important;
-  border: solid #fde2e2 1px !important;
+  background-color: #CE4A4E;
+  color: #fef0f0;
+  border: solid #CE4A4E 1px;
 }

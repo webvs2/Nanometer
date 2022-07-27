@@ -4,9 +4,9 @@
     width: 220px;
 }
 @mixin alert-theme($color, $bkColor, $side) {
-    background-color: $bkColor !important;
-    color: $color !important;
-    border: solid $side 1px !important;
+    background-color: $bkColor ;
+    color: $color ;
+    border: solid $side 1px ;
 }
 
 .nan-alert {
@@ -52,12 +52,13 @@
         opacity: 1;
         top: 20px;
     }
+    
     90% {
         opacity: 1;
         top: 20px;
     }
     100% {
-        opacity: 0.8;
+        opacity: 0.4;
         top: -100px;
     }
 }
@@ -78,7 +79,7 @@
 }
 
 .alert-warning {
-    @include alert-theme(#e6a23c, #fdf6ec, #faecd8);
+    @include alert-theme(#fff, #FFA963, #FFB38C);
 }
 
 .alert-info {
@@ -86,5 +87,5 @@
 }
 
 .alert-error {
-    @include alert-theme(#f56c6c, #fef0f0, #fde2e2);
+    @include alert-theme(#fef0f0, #CE4A4E, #CE4A4E);
 }

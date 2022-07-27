@@ -20,12 +20,9 @@
 	  }
 
 	  push(value) {
-	    console.log(this.store);
-
-	    if (this.store.length > 5) {
-	      this.closeAll(); // this.store.map((item,index)=>{
-	      // })
-	      // instances.closeSingle(id, option.destroy);
+	    // console.log(this.store)
+	    if (this.store.length > 3) {
+	      this.closeAll();
 	    }
 
 	    this.store.push(value);
@@ -89,7 +86,6 @@
 	  establish() {
 	    let option = this.option;
 	    if (!option.context) throw '[message] If you use the object argument form, be aware!"Context" is required';
-	    console.log('我是构建器', option);
 	    let id = 'message_' + seed++,
 	        cardinalNumber = parseInt(instances.store.length / 10);
 
@@ -109,8 +105,7 @@
 
 
 	    let messageBox = new MessageConstructor();
-	    document.body.appendChild(messageBox.dom); // console.log(messageBox,'messageBox')
-
+	    document.body.appendChild(messageBox.dom);
 	    instances.push(messageBox);
 	    let element = document.getElementById(id);
 	    element.style.animationDelay = cardinalNumber + 's';
