@@ -3,8 +3,8 @@
   "sideEffects": false,
   "version": "2.0.0",
   "description": "Simple message prompts",
-  "main": "build/build.js",
-  "style": "build/build.css",
+  "main": "dist/build.js",
+  "style": "dist/build.css",
   "author": "nanomster",
   "license": "ISC",
   "files": [
@@ -34,7 +34,6 @@
     "autoprefixer": "^10.4.7",
     "cross-env": "^7.0.3",
     "cross-spawn": "^7.0.3",
-    "jquery": "^3.6.0",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "postcss": "^8.4.14",
