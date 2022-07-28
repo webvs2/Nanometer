@@ -3,8 +3,8 @@
   "sideEffects": false,
   "version": "2.0.3",
   "description": "Simple message prompts",
-  "main": "dist/build.js",
-  "style": "dist/build.css",
+  "main": "dist/bundle.js",
+  "style": "dist/bundle.css",
   "author": "nanomster",
   "license": "ISC",
   "files": [
