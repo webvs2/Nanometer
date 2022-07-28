@@ -8,8 +8,7 @@
   "author": "nanomster",
   "license": "ISC",
   "files": [
-    "lib",
-    "src"
+    "dist"
   ],
   "keywords": [
     "message",
