@@ -1,7 +1,7 @@
 {
   "name": "nanometer-message",
   "sideEffects": false,
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Simple message prompts",
   "main": "dist/build.js",
   "style": "dist/build.css",
@@ -40,8 +40,5 @@
     "build": " cross-env NODE_ENV=production rollup -c rollup.config.prod.js",
     "serve": " cross-env NODE_ENV=dev rollup -c rollup.config.dev.js --watch --failAfterWarnings"
   },
-  "dependencies": {
-   
-   
-  }
+  "dependencies": {}
 }
