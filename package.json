@@ -1,7 +1,7 @@
 {
   "name": "nanometer-message",
   "sideEffects": false,
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Simple message prompts",
   "main": "dist/build.js",
   "style": "dist/build.css",
