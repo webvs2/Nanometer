@@ -23,45 +23,49 @@
 }
 
 .entranceBox {
-  animation-timing-function: cubic-bezier(0.58, 0.72, 0.53, 0.67);
-  -webkit-animation-timing-function: cubic-bezier(0.58, 0.72, 0.53, 0.67);
-  animation-name: entrance;
-  animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-name: entrance;
+          animation-name: entrance;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
-.leaveBox {
-  animation-timing-function: ease-out;
-  -webkit-animation-timing-function: ease-out;
-  animation-name: leave;
-  animation-fill-mode: forwards;
-}
-
-@keyframes entrance {
+@-webkit-keyframes entrance {
   0% {
-    opacity: 0;
+    opacity: 0.4;
     top: -20px;
   }
-  8% {
+  12% {
     opacity: 1;
     top: 20px;
   }
-  90% {
+  80% {
     opacity: 1;
     top: 20px;
   }
   100% {
-    opacity: 0.4;
+    opacity: 0;
     top: -100px;
   }
 }
-@keyframes leave {
-  from {
+
+@keyframes entrance {
+  0% {
+    opacity: 0.4;
+    top: -20px;
+  }
+  12% {
     opacity: 1;
     top: 20px;
   }
-  to {
+  80% {
+    opacity: 1;
+    top: 20px;
+  }
+  100% {
     opacity: 0;
-    top: -20px;
+    top: -100px;
   }
 }
 .alert-success {

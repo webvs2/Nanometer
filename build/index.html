@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>message</title>
     <link rel="stylesheet" href="./bundle.css">
 </head>
 <body>
     
     <h1 style="color: red; text-align: center;margin-top: 100px; ">Rollup</h1>
-    <button id="button" >消息</button>
+    <button id="button" >消息option</button>
+    <button id="buttonfast" >快捷消息</button>
+
     <button id="buttonsuccess" >成功消息</button>
     <button id="buttonerror" >错误消息</button>
 
@@ -35,8 +37,14 @@
             })
 
         }
+        document.getElementById('buttonfast').onclick=function(){
+            // console.log($message('success',1))
+        $message('error',23232)
+
+        }
+        
         document.getElementById('buttonsuccess').onclick=function(){
-         $message.success('成功消息')
+         $message.success('成功消息成功消息成功消息成功消息成功消息成功消息成功消息成功消息成功消息成功消息成功消息成功消息成功消息成功消息成功消息成功消息成功消息成功消息成功消息成功消息成功消息成功消息成功消息成功消息成功消息')
         }
         document.getElementById('buttonerror').onclick=function(){
          $message.error('错误消息')

@@ -1,7 +1,10 @@
 'use strict';
-// import { data } from 'jquery';
-import { differenceBy, isObject } from 'lodash';
-import resource from './src/resource.js';
+import  './src/resource.js';
+// import {  isObject} from 'lodash-es';、
+let  differenceBy =require('lodash/differenceBy')
+
+// console.log(isObject(1))
+
 
 
 var PopupManager = {
@@ -10,8 +13,7 @@ var PopupManager = {
 		return PopupManager.zIndex++;
 	}
 };
-var seed = 1;
-
+let seed=1;
 class storeSteward {
 	constructor(Store) {
 		this.store = Store;
@@ -51,21 +53,16 @@ class MessageClass {
 		this.option = {};
 		this.defaultOption = {
 			type: 'info',
-			animationDuration: 2.5,
+			animationDuration: 2,
 			egoClass: '',
 			context: '',
 			destroy: null
 		};
 	}
-
 	alteration(option) {
-		// console.log('装载',this.option)
 		this.option = Object.assign({}, this.defaultOption, option)
-		console.log('装载',this.option)
-
 		this.establish()
 	}
-
 	// reate
 	establish() {
 		let option = this.option
@@ -74,11 +71,10 @@ class MessageClass {
 			cardinalNumber = parseInt(instances.store.length / 10);
 		function MessageConstructor(data) {
 			let div = document.createElement('div');
-			div.className = `alert-${option.type}  ${option.egoClass} alert  nan-alert` 
+			div.className = `alert-${option.type}  alert  nan-alert entranceBox  ${option.egoClass}` 
 			div.role = 'alert';
 			div.id = id;
 			div.innerText = option.context;
-
 			div.style.zIndex = PopupManager.nextZIndex();
 			return {
 				dom: div,
@@ -89,37 +85,23 @@ class MessageClass {
 		}
 		//	 Generate and add to the body...
 		let messageBox = new MessageConstructor(option);
+		messageBox.dom.style.animationDelay = cardinalNumber + 's';
+		messageBox.dom.style.animationDuration = cardinalNumber + option.animationDuration  + 's';
 		document.body.appendChild(messageBox.dom);
 		instances.push(messageBox);
-		let element = document.getElementById(id);
-		element.style.animationDelay = cardinalNumber + 's';
-		element.style.animationDuration = cardinalNumber + option.animationDuration + 0.8 + 's';
-		element.className += ' entranceBox';
 	}
-}
-
-let defaultOption = {
-	type: 'info',
-	animationDuration: 2.5,
-	egoClass: '',
-	context: '',
-	destroy: ''
 };
+
 let MessageBox = new MessageClass()
-let message = function (...data) {
+let message =  (...data)=> {
 	MessageBox.alteration(data.length<2 ? data[0] : {
 		type: data[0],
 		context: data[1]
 	})
 }
 new Array('success', 'warning', 'info', 'error').map((item, index) => {
-	message[item] = function (value) {
+	message[item] =  (value)=> {
 		MessageBox.alteration({ type: item, context: value });
 	}
 })
-
 export default message
-
-
-
-
