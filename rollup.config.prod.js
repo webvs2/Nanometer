@@ -8,7 +8,7 @@ const path = require('path')
 let output={
     sourcemap:false,
     compact:true,
-    file: path.join(__dirname, './dist/bundle.js'),
+    file: path.join(__dirname, './dist/index.js'),
 
 }
 config.output=Object.assign({},config.output,output)

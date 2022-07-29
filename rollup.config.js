@@ -14,7 +14,7 @@ export default {
   input: 'index.js',
   treeshake:true,
   output: {
-    file: path.join(__dirname, './build/bundle.js'),
+    file: path.join(__dirname, './build/index.js'),
     format: 'umd',
     name: '$message',
     sourcemap: true,
