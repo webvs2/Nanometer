@@ -21,6 +21,10 @@ Install with script:
 
 Install with npm:
 
+```
+cnpm i nanometer-message
+```
+
 ```bash
 npm i nanometer-message
 ```
@@ -31,17 +35,27 @@ npm i nanometer-message
 
 ```js  
 var Message = require('nanometer-message')
-<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="dist/style.css" />
  Message({option})    为每个 type 定义了各自的方法，如 Message.success(options)。
 ```
 * 类似于vue:
 
 ```js
 import Message from 'nanometer-message';
-import "nanometer-message/build/build.css"
+import "nanometer-message/dist/build.css"
 
 Vue.prototype.$meessage = Message（Vue2）  为每个 type 定义了各自的方法，如 Message.success(options)。
 ```
+
+
+
+注意：在vue中使用需要在style里面引入
+
+```
+@import url('nanometer-message/dist/index.css');
+```
+
+
 
 <h2 align="left">API</h2>
 
