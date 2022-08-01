@@ -1,9 +1,12 @@
 'use strict';
-import  './src/resource.js';
-// import {  isObject} from 'lodash-es';、
-let  differenceBy =require('lodash/differenceBy')
+import './src/resource.js';
+// import  './styles/srtle.scss';
+
+import { filter, delay } from 'lodash-es';
+// let  differenceBy =require('lodash/isObject')
 
 // console.log(isObject(1))
+
 
 
 
@@ -13,17 +16,37 @@ var PopupManager = {
 		return PopupManager.zIndex++;
 	}
 };
-let seed=1;
+// let seed=1;
 class storeSteward {
 	constructor(Store) {
 		this.store = Store;
+		this.pastDue = []
 	}
 	push(value) {
 		// console.log(this.store)
-		if (this.store.length > 0) {
+		if (this.store.length > 10) {
 			this.closeAll()
 		}
 		this.store.push(value)
+		console.log(value)
+		this.pastDue.push(this.timebomb(value))
+	}
+	timebomb(data) {
+		let { source, dom,box } = data
+		return setTimeout(() => {
+			dom.className = 'entranceBoxOut ' + dom.className;
+			delay(function (isEmpty) {
+				// containerDom.removeChild(dom);
+				// console.log(isEmpty,containerDom,'发三分大赛')
+				// if (!isEmpty) {
+					document.body.removeChild(box)
+				// }
+			}, 1000, this.store.length);
+			this.store = filter(this.store, (o) => o.id == source.id);
+	
+			// console.log('this.store',this.store)
+
+		}, source.animationDuration)
 
 	}
 	closeAll() {
@@ -39,8 +62,9 @@ class storeSteward {
 		if (!!source.destroy) {
 			source.destroy()
 		}
-		this.store = differenceBy(this.store, [{ id: id }], 'id');
-		document.body.removeChild(document.getElementById(id));
+		// this.pastDue.push(source)
+		// this.store = filter(this.store, (o)=>o.id!=id);
+		// document.body.removeChild(document.getElementById(id));
 	}
 
 }
@@ -51,9 +75,12 @@ let instances = new storeSteward([]);
 class MessageClass {
 	constructor(option) {
 		this.option = {};
+		this.seed = 1
+		this.isContainer = false
+		this.containerDom = null
 		this.defaultOption = {
 			type: 'info',
-			animationDuration: 2,
+			animationDuration: 3000,//ms
 			egoClass: '',
 			context: '',
 			destroy: null
@@ -67,40 +94,77 @@ class MessageClass {
 	establish() {
 		let option = this.option
 		if (!option.context) throw ('[message] If you use the object argument form, be aware!"Context" is required')
-		let id = 'message_' + (seed++),
-			cardinalNumber = parseInt(instances.store.length / 10);
+		let id = 'message_' + (this.seed++)
+		// cardinalNumber = parseInt(instances.store.length / 10);
 		function MessageConstructor(data) {
+			console.log('干哈')
+			let box = document.createElement('div');
+			box.className = 'nan-location'
 			let div = document.createElement('div');
-			div.className = `alert-${option.type}  alert  nan-alert entranceBox  ${option.egoClass}` 
+			div.className = `alert-${option.type}    nan-alert entranceBox  ${option.egoClass}`
 			div.role = 'alert';
-			div.id = id;
+			// div.id = id;
+			box.id=id
 			div.innerText = option.context;
 			div.style.zIndex = PopupManager.nextZIndex();
+			box.appendChild(div)
 			return {
+				// dom: div,
 				dom: div,
+
 				id: id,
 				domID: '#' + id,
-				source: data
+				source: data,
+				box:box
 			};
 		}
 		//	 Generate and add to the body...
 		let messageBox = new MessageConstructor(option);
-		messageBox.dom.style.animationDelay = cardinalNumber + 's';
-		messageBox.dom.style.animationDuration = cardinalNumber + option.animationDuration  + 's';
-		document.body.appendChild(messageBox.dom);
+		// messageBox.dom.style.top= instances.store.length * 60 +'px';
+		messageBox.source.animationDuration = messageBox.source.animationDuration + instances.store.length * 60
+		// messageBox.dom.style.animationDelay = cardinalNumber + 's';
+		// messageBox.dom.style.animationDuration = cardinalNumber + option.animationDuration  + 's';
+		// box.appendChild(messageBox.dom)
+		document.body.appendChild(messageBox.box);
+		// this.mountDom(messageBox.dom)
+		// this.containerDom
+		messageBox.containerDom = this.containerDom
 		instances.push(messageBox);
 	}
+	mountDom(dom) {
+		if (!this.isContainer) {
+			let box = document.createElement('div');
+			box.className = 'nan-location'
+			box.id = "nan-location"
+			document.body.appendChild(box);
+			this.containerDom = box
+			this.isContainer = true
+
+		}
+		// console.log('dom', dom)
+		// this.containerDom.appendChild(dom)
+		// document.getElementById('nan-location').appendChild(dom)
+		// let dadsfas= document.getElementById('nan-location')
+		// dadsfas.appendChild(dom)
+
+		// let box = document.createElement('div');
+		// box.className='nan-location'
+		// document.body.appendChild(box);
+
+
+	}
+
 };
 
 let MessageBox = new MessageClass()
-let message =  (...data)=> {
-	MessageBox.alteration(data.length<2 ? data[0] : {
+let message = (...data) => {
+	MessageBox.alteration(data.length < 2 ? data[0] : {
 		type: data[0],
 		context: data[1]
 	})
 }
 new Array('success', 'warning', 'info', 'error').map((item, index) => {
-	message[item] =  (value)=> {
+	message[item] = (value) => {
 		MessageBox.alteration({ type: item, context: value });
 	}
 })

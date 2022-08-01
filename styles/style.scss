@@ -1,12 +1,18 @@
 @charset "utf-8";
-#mocha{
-    font-size: 24px;
-    width: 220px;
-}
+
 @mixin alert-theme($color, $bkColor, $side) {
     background-color: $bkColor ;
     color: $color ;
-    border: solid $side 1px ;
+    border: solid $side 1px;
+}
+
+.nan-location {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    // border: solid red 1px;
 }
 
 .nan-alert {
@@ -15,25 +21,48 @@
     box-sizing: border-box;
     border-radius: 4px;
     // position: fixed;
-    position: absolute;
-    left: 50%;
+    // position: absolute;
+    // left:;
     opacity: 0;
-    top: 0px;
+    // top: 0px;
+    display: inline-block;
+         max-width: 80%;
+    // margin-top: 20px;
+    margin: 0 auto;
     background-color: #edf2fc;
     color: #909399;
     border: solid #ebeef5 1px;
     transform: translateX(-50%);
     overflow: hidden;
     padding: 15px 15px 15px 20px;
-    display: flex;
+    // display: flex;
     align-items: center;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+    
+    // &:hover{
+    //     transition: all 0.3s;
+    //     // animation-delay:
+    //     color: #333;
+    //     // transform: translateY(20px)  !important;
+    // }
 }
 
 .entranceBox {
-    animation-timing-function: ease-in-out;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
     // -webkit-animation-timing-function: cubic-bezier(.58, .72, .53, .67);
-    animation-name: entrance;
+    animation-name: entry;
     animation-fill-mode: forwards;
+    // transform: translateX(0) 
+
+}
+
+.entranceBoxOut {
+    animation-duration: 0.4s !important;
+    animation-timing-function: cubic-bezier(.38, .63, .56, .92) !important;
+
+    animation-name: out !important;
+
 }
 
 // .leaveBox {
@@ -42,28 +71,35 @@
 //     animation-name: leave;
 //     animation-fill-mode: forwards;
 // }
-
-@keyframes entrance {
+@keyframes out {
     0% {
-        opacity: 0.4;
-        top: -20px;
-    }
-    12% {
         opacity: 1;
-        top: 20px;
+        transform: translateY(20px) // top: -100px;
     }
-    
-    80% {
-        opacity: 1;
-        top: 20px;
-    }
+
     100% {
         opacity: 0;
-        // height: 0;
-        top: -100px;
+        display: none;
+        // top: -20px;
+        transform: translateY(-20px)
+    }
+
+}
+
+@keyframes entry {
+    0% {
+        opacity: 0.4;
+        // top: -20px;
+        transform: translateY(-20px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(20px) // top: -100px;
     }
 }
-.alert-success{
+
+.alert-success {
     @include alert-theme(#C7FCEC, #00C9A7, #00C9A7);
 }
 

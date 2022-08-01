@@ -5,7 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>message</title>
-    <link rel="stylesheet" href="./bundle.css">
+    <link rel="stylesheet" href="./index.css">
+    <style>
+        html,body{
+            /* background-color: blue ; */
+        }
+    </style>
 </head>
 <body>
     
@@ -21,10 +26,11 @@
     <button id="buttonwarning" >警告消息</button>
 
 
-    <script src="./bundle.js"></script>
+    <script src="./index.js"></script>
     <script>
         // window._=31325
         // MyBundle()
+        let a =1;
         document.getElementById('button').onclick=function(){
             // console.log($message('success',1))
         $message({
@@ -39,7 +45,7 @@
         }
         document.getElementById('buttonfast').onclick=function(){
             // console.log($message('success',1))
-        $message('error',23232)
+        $message('error',a++)
 
         }
         
