@@ -4,7 +4,7 @@ import { terser } from "rollup-plugin-terser";
 import analyze from 'rollup-plugin-analyzer'
 const rimraf = require('rimraf');
 const  _console =require('console-color-mr')
-
+import myExample from './src/rollup-plugin-my-example.js';
 rimraf('./dist/*',(err)=>{
     if(err){
         console.error(err)
@@ -28,6 +28,7 @@ config.plugins=config.plugins.concat([
             pure_funcs: ['console.log'] // 移除console
         }
     }),
+    myExample()
     // analyze()
 ])
 

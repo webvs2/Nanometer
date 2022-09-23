@@ -9,6 +9,10 @@ import autoprefixer from 'autoprefixer'
 // import dev from 'rollup-plugin-dev'
 // import livereload from 'rollup-plugin-livereload'
 import rollupPostcss from 'rollup-plugin-postcss'
+import sucrase from '@rollup/plugin-sucrase';
+
+// import myExample from './module/rollup-plugin-my-example.js';
+
 // import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 const path = require('path')
 
@@ -38,7 +42,14 @@ export default {
   },
   // external: ['lodash'],
   plugins: [
-    nodeResolve(),
+    nodeResolve({
+      extensions: ['.js', '.ts']
+    }),
+    
+    // sucrase({
+    //   exclude: ['node_modules/**'],
+    //   transforms: ['typescript']
+    // }),
     // commonjs(),
     babel({
       exclude: 'node_modules/**' 
@@ -53,6 +64,7 @@ export default {
       ],
       sass: require('sass')
     }),
+    // myExample()
 
   ],
 

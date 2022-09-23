@@ -36,11 +36,7 @@ class storeSteward {
 		return setTimeout(() => {
 			dom.className = 'entranceBoxOut ' + dom.className;
 			delay(function (isEmpty) {
-				// containerDom.removeChild(dom);
-				// console.log(isEmpty,containerDom,'发三分大赛')
-				// if (!isEmpty) {
 					document.body.removeChild(box)
-				// }
 			}, 1000, this.store.length);
 			this.store = filter(this.store, (o) => o.id == source.id);
 	
@@ -95,15 +91,12 @@ class MessageClass {
 		let option = this.option
 		if (!option.context) throw ('[message] If you use the object argument form, be aware!"Context" is required')
 		let id = 'message_' + (this.seed++)
-		// cardinalNumber = parseInt(instances.store.length / 10);
 		function MessageConstructor(data) {
-			console.log('干哈')
 			let box = document.createElement('div');
 			box.className = 'nan-location'
 			let div = document.createElement('div');
 			div.className = `alert-${option.type}    nan-alert entranceBox  ${option.egoClass}`
 			div.role = 'alert';
-			// div.id = id;
 			box.id=id
 			div.innerText = option.context;
 			div.style.zIndex = PopupManager.nextZIndex();
@@ -120,14 +113,8 @@ class MessageClass {
 		}
 		//	 Generate and add to the body...
 		let messageBox = new MessageConstructor(option);
-		// messageBox.dom.style.top= instances.store.length * 60 +'px';
 		messageBox.source.animationDuration = messageBox.source.animationDuration + instances.store.length * 60
-		// messageBox.dom.style.animationDelay = cardinalNumber + 's';
-		// messageBox.dom.style.animationDuration = cardinalNumber + option.animationDuration  + 's';
-		// box.appendChild(messageBox.dom)
 		document.body.appendChild(messageBox.box);
-		// this.mountDom(messageBox.dom)
-		// this.containerDom
 		messageBox.containerDom = this.containerDom
 		instances.push(messageBox);
 	}
@@ -141,17 +128,6 @@ class MessageClass {
 			this.isContainer = true
 
 		}
-		// console.log('dom', dom)
-		// this.containerDom.appendChild(dom)
-		// document.getElementById('nan-location').appendChild(dom)
-		// let dadsfas= document.getElementById('nan-location')
-		// dadsfas.appendChild(dom)
-
-		// let box = document.createElement('div');
-		// box.className='nan-location'
-		// document.body.appendChild(box);
-
-
 	}
 
 };

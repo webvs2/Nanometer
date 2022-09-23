@@ -48,7 +48,7 @@
 }
 
 .entranceBox {
-    animation-duration: 0.5s;
+    animation-duration: 0.3s;
     animation-timing-function: ease;
     // -webkit-animation-timing-function: cubic-bezier(.58, .72, .53, .67);
     animation-name: entry;
@@ -58,7 +58,7 @@
 }
 
 .entranceBoxOut {
-    animation-duration: 0.4s !important;
+    animation-duration: 0.3s !important;
     animation-timing-function: cubic-bezier(.38, .63, .56, .92) !important;
 
     animation-name: out !important;

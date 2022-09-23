@@ -19,6 +19,7 @@
   "devDependencies": {
     "@babel/core": "^7.18.9",
     "@rollup/plugin-commonjs": "^22.0.1",
+    "@rollup/plugin-html": "^0.2.4",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@vue/compiler-sfc": "^3.2.37",
@@ -27,6 +28,7 @@
     "console-color-mr": "^2.0.2",
     "cross-env": "^7.0.3",
     "cross-spawn": "^7.0.3",
+    "echarts": "^5.3.3",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "node-sass": "^7.0.1",
@@ -52,5 +54,7 @@
     "build": " cross-env NODE_ENV=production rollup -c rollup.config.prod.js",
     "serve": " cross-env NODE_ENV=dev rollup -c rollup.config.dev.js --watch --failAfterWarnings"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@rollup/plugin-sucrase": "^4.0.4"
+  }
 }

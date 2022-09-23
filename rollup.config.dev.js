@@ -4,6 +4,7 @@ import config from './rollup.config'
 const rollup = require('rollup');
 import serve from 'rollup-plugin-serve'
 import livereload from 'rollup-plugin-livereload'
+const html = require('@rollup/plugin-html');
 
 // let cache;
 // // console.log(rollup.rollup)
@@ -24,6 +25,7 @@ import livereload from 'rollup-plugin-livereload'
 // })
 config.cache = true
 config.plugins.push(
+    // html(),
     serve({
         open: true,
         openPage: '/build/index.html',
