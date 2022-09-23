@@ -31,7 +31,7 @@
     "echarts": "^5.3.3",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
-    "node-sass": "^7.0.1",
+    "node-sass": "^7.0.0",
     "postcss": "^8.4.14",
     "rimraf": "^3.0.2",
     "rollup-plugin-analyzer": "^4.0.0",
