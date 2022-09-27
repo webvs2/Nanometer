@@ -10,14 +10,14 @@ import autoprefixer from 'autoprefixer'
 // import livereload from 'rollup-plugin-livereload'
 import rollupPostcss from 'rollup-plugin-postcss'
 import sucrase from '@rollup/plugin-sucrase';
-
+import typescript from '@rollup/plugin-typescript';
 // import myExample from './module/rollup-plugin-my-example.js';
 
 // import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 const path = require('path')
 
 export default {
-  input: 'index.js',
+  input: 'index.ts',
   treeshake:true,
   output: {
     file: path.join(__dirname, './build/index.js'),
@@ -55,6 +55,10 @@ export default {
       exclude: 'node_modules/**' 
     }),
     json(),
+    typescript({
+      exclude:['dist/*','build/*'],
+      include:['src/*','index.*']
+    }),
     // peerDepsExternal(),
     scss({
       processor: () => postcss([autoprefixer()]),
@@ -62,6 +66,7 @@ export default {
         path.join(__dirname, '../../node_modules/'),
         'node_modules/'
       ],
+     
       sass: require('sass')
     }),
     // myExample()

@@ -1,14 +1,7 @@
 'use strict';
-import './src/resource.js';
-// import  './styles/srtle.scss';
-
+// import './src/resource.js';
+import './styles/style.scss';
 import { filter, delay } from 'lodash-es';
-// let  differenceBy =require('lodash/isObject')
-
-// console.log(isObject(1))
-
-
-
 
 var PopupManager = {
 	zIndex: 2000,
@@ -18,28 +11,28 @@ var PopupManager = {
 };
 // let seed=1;
 class storeSteward {
+	store: any[];
+	pastDue: any[];
 	constructor(Store) {
 		this.store = Store;
 		this.pastDue = []
 	}
 	push(value) {
-		// console.log(this.store)
 		if (this.store.length > 10) {
 			this.closeAll()
 		}
 		this.store.push(value)
-		console.log(value)
 		this.pastDue.push(this.timebomb(value))
 	}
-	timebomb(data) {
-		let { source, dom,box } = data
+	timebomb(data: { source: any; dom: any; box: any; }) {
+		let { source, dom, box } = data
 		return setTimeout(() => {
 			dom.className = 'entranceBoxOut ' + dom.className;
-			delay(function (isEmpty) {
-					document.body.removeChild(box)
+			delay(function (isEmpty: any) {
+				document.body.removeChild(box)
 			}, 1000, this.store.length);
 			this.store = filter(this.store, (o) => o.id == source.id);
-	
+
 			// console.log('this.store',this.store)
 
 		}, source.animationDuration)
@@ -54,26 +47,38 @@ class storeSteward {
 
 		})
 	}
-	closeSingle(id, source) {
+	closeSingle(id: any, source: { destroy: () => void; }) {
 		if (!!source.destroy) {
 			source.destroy()
 		}
-		// this.pastDue.push(source)
-		// this.store = filter(this.store, (o)=>o.id!=id);
-		// document.body.removeChild(document.getElementById(id));
 	}
 
 }
 let instances = new storeSteward([]);
 
 //	Exposure to message objects is not recommended, and is destroyed for more powerful boxes
-
+interface resultType {
+	dom: HTMLElement;
+	id: String;
+	domID: String;
+	source: any;
+	box: HTMLElement;
+	[propName: string]: any;
+}
 class MessageClass {
+	option: {};
+	seed: number;
+	isContainer: boolean;
+	containerDom: HTMLElement;
+	defaultOption: {
+		type: string; animationDuration: number; //ms
+		egoClass: string; context: string; destroy: null;
+	};
 	constructor(option) {
 		this.option = {};
 		this.seed = 1
 		this.isContainer = false
-		this.containerDom = null
+		// this.containerDom = HTMLElement
 		this.defaultOption = {
 			type: 'info',
 			animationDuration: 3000,//ms
@@ -87,44 +92,48 @@ class MessageClass {
 		this.establish()
 	}
 	// reate
+
 	establish() {
-		let option = this.option
+		let option: {
+			context?: any,
+			egoClass?: any,
+			type?: any,
+		} = this.option
 		if (!option.context) throw ('[message] If you use the object argument form, be aware!"Context" is required')
 		let id = 'message_' + (this.seed++)
-		function MessageConstructor(data) {
+		function MessageConstructor(data: {}):resultType {
 			let box = document.createElement('div');
 			box.className = 'nan-location'
-			let div = document.createElement('div');
+			let div = document.createElement('div') as HTMLElement;
 			div.className = `alert-${option.type}    nan-alert entranceBox  ${option.egoClass}`
-			div.role = 'alert';
-			box.id=id
+			// div.role = 'alert';
+			box.id = id
 			div.innerText = option.context;
-			div.style.zIndex = PopupManager.nextZIndex();
+			div.style.zIndex = String(PopupManager.nextZIndex());
 			box.appendChild(div)
 			return {
 				// dom: div,
 				dom: div,
-
 				id: id,
 				domID: '#' + id,
 				source: data,
-				box:box
-			};
+				box: box
+			} as resultType;
 		}
 		//	 Generate and add to the body...
-		let messageBox = new MessageConstructor(option);
+		let messageBox = MessageConstructor(option);
 		messageBox.source.animationDuration = messageBox.source.animationDuration + instances.store.length * 60
 		document.body.appendChild(messageBox.box);
 		messageBox.containerDom = this.containerDom
 		instances.push(messageBox);
 	}
-	mountDom(dom) {
+	mountDom(dom: any) {
 		if (!this.isContainer) {
 			let box = document.createElement('div');
 			box.className = 'nan-location'
 			box.id = "nan-location"
 			document.body.appendChild(box);
-			this.containerDom = box
+			this.containerDom= box
 			this.isContainer = true
 
 		}
@@ -132,16 +141,20 @@ class MessageClass {
 
 };
 
-let MessageBox = new MessageClass()
-let message = (...data) => {
+let MessageBox = new MessageClass({})
+let message = (...data: any[]) => {
 	MessageBox.alteration(data.length < 2 ? data[0] : {
 		type: data[0],
 		context: data[1]
 	})
 }
 new Array('success', 'warning', 'info', 'error').map((item, index) => {
-	message[item] = (value) => {
+	message[item] = (value: any) => {
 		MessageBox.alteration({ type: item, context: value });
 	}
 })
 export default message
+
+function establish() {
+	throw new Error('Function not implemented.');
+}

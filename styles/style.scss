@@ -4,6 +4,12 @@
     background-color: $bkColor ;
     color: $color ;
     border: solid $side 1px;
+    box-shadow: 0 2px 4px $side, 0 0 6px rgba(0, 0, 0, .04)
+    // box-shadow:
+    // -8px -4px 8px 0px $side,
+    // 8px 4px 12px 0px $side,
+    // 4px 4px 4px 0px $side inset,
+    // -4px -4px 4px 0px $side inset;
 }
 
 .nan-location {
@@ -37,8 +43,8 @@
     padding: 15px 15px 15px 20px;
     // display: flex;
     align-items: center;
-    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-    
+    // box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+
     // &:hover{
     //     transition: all 0.3s;
     //     // animation-delay:
@@ -88,7 +94,7 @@
 
 @keyframes entry {
     0% {
-        opacity: 0.4;
+        opacity: 0.8;
         // top: -20px;
         transform: translateY(-20px)
     }
