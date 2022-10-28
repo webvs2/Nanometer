@@ -32,7 +32,7 @@ let acquire = (customization) => {
                   sync[item]
                 )}\x1B[0m      `
             );
-            pathReplace('item',`${base}/${path.basename(sync[item])}`)
+            pathReplace(item,`${base}/${path.basename(sync[item])}`)
           });
       } else {
         console.log(
@@ -89,7 +89,8 @@ function pathReplace(keyword,con,presentBase = "/src/",) {
               path.join(__dirname, presentBase + file),
               "utf8",
               function (err, data) {
-                let text = data.replace( new RegExp(  `hp+.+${keyword}`,'g') , con);
+                let text = data.replace( new RegExp(  `${base}.+${keyword}`,'g') , con);
+                console.log(new RegExp(  `${base}.+${keyword}`,'g'))
                 fs.writeFile(
                   path.join(__dirname, presentBase + file),
                   text,
@@ -113,4 +114,3 @@ function pathReplace(keyword,con,presentBase = "/src/",) {
   });
 }
 // pathReplace('杨鹏飞','1212')
-// console.log( /hp+.+aaa/g.test('/hp11/aaa.js'))
