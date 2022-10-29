@@ -32,7 +32,7 @@
     "echarts": "^5.3.3",
     "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
-    "node-sass": "^7.0.1",
+    "node-sass": "^7.0.3",
     "postcss": "^8.4.14",
     "rimraf": "^3.0.2",
     "rollup-plugin-analyzer": "^4.0.0",
@@ -54,9 +54,12 @@
   },
   "scripts": {
     "build": " cross-env NODE_ENV=production rollup -c rollup.config.prod.js",
-    "serve": " cross-env NODE_ENV=dev rollup -c rollup.config.dev.js --watch --failAfterWarnings"
+    "serve": " cross-env NODE_ENV=dev rollup -c rollup.config.dev.js --watch --failAfterWarnings",
+    "sync": "node synchronization.js"
   },
   "dependencies": {
-    "@rollup/plugin-sucrase": "^4.0.4"
+    "@rollup/plugin-sucrase": "^4.0.4",
+    "inquirer": "^8.2.5",
+    "node-sass": "^7.0.3"
   }
 }
