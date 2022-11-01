@@ -1,8 +1,14 @@
 @font-face {
   font-family: "ifont"; /* Project id 2584761 */
+<<<<<<< HEAD
   src: url('//at.alicdn.com/t/font_2584761_1u7dwraxww1.woff2?t=1624882059084') format('woff2'),
        url('//at.alicdn.com/t/font_2584761_1u7dwraxww1.woff?t=1624882059084') format('woff'),
        url('//at.alicdn.com/t/font_2584761_1u7dwraxww1.ttf?t=1624882059084') format('truetype');
+=======
+  src: url('./font_2735453_5qukyiw3qso.woff2'),
+       url('./font_2735453_5qukyiw3qso.woff2'),
+       url('./font_2735453_5qukyiw3qso.woff2');
+>>>>>>> 3f38232ac168524ce211c2cb91b4b2db46ce3cc2
 }
 
 .ifont {
