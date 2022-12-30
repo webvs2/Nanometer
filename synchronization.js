@@ -80,7 +80,7 @@ if (process.argv[2]) {
       },
       {
         type: "input",
-        message: "即将自我修正下载文件中内联路径？:",
+        message: "即将扫描下载文件并修正内联路径？:",
         name: "isCorrection",
         default: "yes",
       },
@@ -121,7 +121,6 @@ function pathReplace(keyword, con, presentBase = "/hp/") {
                   "g"
                 ),
                 function (context) {
-                  // console.log(context)
                   return con;
                 }
               ),
