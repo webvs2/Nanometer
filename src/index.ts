@@ -1,6 +1,5 @@
 "use strict";
-// import "./css/index.scss";
-// require('./css/index.scss')
+import "./css/index.scss";
 import { filter, delay } from "lodash";
 import render from "./render";
 var PopupManager = {

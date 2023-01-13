@@ -4,8 +4,8 @@
 }
 @mixin alert-theme($color, $bkColor, $side) {
     background-color: $bkColor;
-  //   color: $color;
-  //   border: solid $side 1px;
+    color: $color;
+    border: solid $side 1px;
   // box-shadow: 0 2px 4px $side, 0 0 6px rgba(0, 0, 0, .08)
   // box-shadow:
   // -8px -4px 8px 0px $side,
@@ -105,8 +105,8 @@
 }
 
 .alert-success {
-  color: var($succeed-color);
-  //   @include alert-theme(#c7fcec, #00c9a7, #00c9a7);
+  // color: var(--succeed-color);
+    @include alert-theme(#c7fcec, #00c9a7, #00c9a7);
 }
 
 .alert-warning {
