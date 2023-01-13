@@ -58,6 +58,7 @@ export default {
     }),
     // peerDepsExternal(),
     scss({
+      fileName: 'index.css',
       processor: () => postcss([autoprefixer()]),
       includePaths: [
         path.join(__dirname, '../../node_modules/'),

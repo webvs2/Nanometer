@@ -1,6 +1,7 @@
 "use strict";
 // import "./css/index.scss";
-import { filter, delay } from "lodash-es";
+// require('./css/index.scss')
+import { filter, delay } from "lodash";
 import render from "./render";
 var PopupManager = {
   zIndex: 2000,
@@ -105,7 +106,7 @@ class MessageClass {
     function MessageConstructor(data: {}): resultType {
       // let box = <div><div/>
       const box = render({ tag: "div", children: "" });
-	  console.log('box',box)
+      console.log("box", box);
       box.className = "nan-location";
       let div = document.createElement("div") as HTMLElement;
       div.className = `alert-${option.type}    nan-alert entranceBox  ${option.egoClass}`;
