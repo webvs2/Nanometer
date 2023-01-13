@@ -8,7 +8,7 @@ import postcss from 'postcss'
 import autoprefixer from 'autoprefixer'
 // import dev from 'rollup-plugin-dev'
 // import livereload from 'rollup-plugin-livereload'
-import jsx from 'rollup-plugin-jsx'
+// import jsx from 'rollup-plugin-jsx'
 import rollupPostcss from 'rollup-plugin-postcss'
 import sucrase from '@rollup/plugin-sucrase';
 import typescript from '@rollup/plugin-typescript';
@@ -46,11 +46,7 @@ export default {
     nodeResolve({
       extensions: ['.js', '.ts']
     }),
-    
-    // sucrase({
-    //   exclude: ['node_modules/**'],
-    //   transforms: ['typescript']
-    // }),
+    // jsx( {factory: 'React.createElement'} ),
     commonjs(),
     babel({
       exclude: 'node_modules/**' 
@@ -60,7 +56,6 @@ export default {
       exclude:['dist/*','build/*'],
       include:['src/*','index.*']
     }),
-    jsx( {factory: 'React.createElement'} ),
     // peerDepsExternal(),
     scss({
       processor: () => postcss([autoprefixer()]),
