@@ -1,10 +1,10 @@
 "use strict";
 import "./css/index.scss";
-import { filter, delay } from "lodash";
+import { filter, delay } from "lodash-es";
 import render from "./render";
 var PopupManager = {
-  zIndex: 2000,
-  nextZIndex: function nextZIndex() {
+  zIndex: 100,
+  nextZIndex: function (): number {
     return PopupManager.zIndex++;
   },
 };
@@ -55,7 +55,7 @@ let instances = new storeSteward([]);
 
 //	Exposure to message objects is not recommended, and is destroyed for more powerful boxes
 interface resultType {
-  dom: HTMLElement;
+  // dom: HTMLElement;
   id: String;
   domID: String;
   source: any;
@@ -103,43 +103,46 @@ class MessageClass {
       throw '[message] If you use the object argument form, be aware!"Context" is required';
     let id = "message_" + this.seed++;
     function MessageConstructor(data: {}): resultType {
-      // let box = <div><div/>
-      const box = render({ tag: "div", children: "" });
-      console.log("box", box);
-      box.className = "nan-location";
-      let div = document.createElement("div") as HTMLElement;
-      div.className = `alert-${option.type}    nan-alert entranceBox  ${option.egoClass}`;
-      box.id = id;
-      div.innerText = option.context;
-      div.style.zIndex = String(PopupManager.nextZIndex());
-      box.appendChild(div);
+      const elem = render({
+        tag: "div", children: option.context, attr:
+          { class: `alert-${option.type}    nan-alert entranceBox  ${option.egoClass}`, id: id, style: { zIndex: 1111 } },
+
+      });
+
       return {
         // dom: div,
-        dom: div,
+        dom: elem,
         id: id,
         domID: "#" + id,
         source: data,
-        box: box,
+        box: elem,
       } as resultType;
     }
     //	 Generate and add to the body...
     let messageBox = MessageConstructor(option);
-    messageBox.source.animationDuration =
-      messageBox.source.animationDuration + instances.store.length * 60;
-    document.body.appendChild(messageBox.box);
-    messageBox.containerDom = this.containerDom;
+    let { source, box, containerDom } = messageBox
+    // {}
+    source.animationDuration = source.animationDuration + instances.store.length * 60;
+    // containerDom = this.containerDom;
     instances.push(messageBox);
+    document.body.appendChild(box);
   }
-  mountDom(dom: any) {
-    if (!this.isContainer) {
-      let box = document.createElement("div");
-      box.className = "nan-location";
-      box.id = "nan-location";
-      document.body.appendChild(box);
-      this.containerDom = box;
-      this.isContainer = true;
-    }
-  }
+  // mountDom(dom: any) {
+  //   if (!this.isContainer) {
+  //     let box = render({
+  //         tag: "div",
+  //         attr:{
+  //           class:'nan-location'
+  //         }
+  //       })
+  //     // document.createElement("div");
+  //     box.className = "nan-location";
+  //     box.id = "nan-location";
+  //     document.body.appendChild(box);
+  //     this.containerDom = box;
+  //     this.isContainer = true;
+  //   }
+  // }
 }
 
 let MessageBox = new MessageClass({});
@@ -148,9 +151,9 @@ let message = (...data: any[]) => {
     data.length < 2
       ? data[0]
       : {
-          type: data[0],
-          context: data[1],
-        }
+        type: data[0],
+        context: data[1],
+      }
   );
 };
 new Array("success", "warning", "info", "error").map((item, index) => {

@@ -31,7 +31,7 @@ config.plugins.push(
         openPage: '/build/index.html',
     }),
    
-    livereload('build')
+    livereload('src')
 )
 // console.log(config)
 export default config

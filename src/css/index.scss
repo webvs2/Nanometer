@@ -14,28 +14,23 @@
   // -4px -4px 4px 0px $side inset;
 }
 
-.nan-location {
-  position: absolute;
-  top: 0px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  // border: solid red 1px;
-}
+// .nan-location {
+//   position: absolute;
+//   top: 0px;
+//   left: 0;
+//   right: 0;
+//   text-align: center;
+//   // border: solid red 1px;
+// }
 
 .nan-alert {
   font-size: 14px;
   min-width: 380px;
   box-sizing: border-box;
   border-radius: 4px;
-  // position: fixed;
-  // position: absolute;
-  // left:;
   opacity: 0;
-  // top: 0px;
   display: inline-block;
   max-width: 80%;
-  // margin-top: 20px;
   margin: 0 auto;
   background-color: #edf2fc;
   color: #909399;
@@ -45,14 +40,11 @@
   padding: 15px 15px 15px 20px;
   // display: flex;
   align-items: center;
-  // box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-
-  // &:hover{
-  //     transition: all 0.3s;
-  //     // animation-delay:
-  //     color: #333;
-  //     // transform: translateY(20px)  !important;
-  // }
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
+  text-align: center;
 }
 
 .entranceBox {
@@ -86,7 +78,7 @@
   100% {
     opacity: 0;
     display: none;
-    // top: -20px;
+    top: -20px;
     transform: translateY(-20px);
   }
 }
@@ -94,11 +86,11 @@
 @keyframes entry {
   0% {
     opacity: 0.8;
-    // top: -20px;
+    top: -20px;
     transform: translateY(-20px);
   }
 
-  100% {
+  80% {
     opacity: 1;
     transform: translateY(20px); // top: -100px;
   }

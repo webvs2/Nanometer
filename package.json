@@ -13,9 +13,9 @@
   "keywords": [
     "message",
     "nanometer-message",
-    "nanometerMessage",
     "alert"
   ],
+  "types": "./typings/main.d.ts",
   "devDependencies": {
     "@babel/core": "^7.18.9",
     "@rollup/plugin-commonjs": "^22.0.1",
