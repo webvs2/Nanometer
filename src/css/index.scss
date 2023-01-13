@@ -1,0 +1,119 @@
+@charset "utf-8";
+
+@mixin alert-theme($color, $bkColor, $side) {
+  background-color: $bkColor;
+  color: $color;
+  border: solid $side 1px;
+  // box-shadow: 0 2px 4px $side, 0 0 6px rgba(0, 0, 0, .08)
+  // box-shadow:
+  // -8px -4px 8px 0px $side,
+  // 8px 4px 12px 0px $side,
+  // 4px 4px 4px 0px $side inset,
+  // -4px -4px 4px 0px $side inset;
+}
+
+.nan-location {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  // border: solid red 1px;
+}
+
+.nan-alert {
+  font-size: 14px;
+  min-width: 380px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  // position: fixed;
+  // position: absolute;
+  // left:;
+  opacity: 0;
+  // top: 0px;
+  display: inline-block;
+  max-width: 80%;
+  // margin-top: 20px;
+  margin: 0 auto;
+  background-color: #edf2fc;
+  color: #909399;
+  border: solid #ebeef5 1px;
+  transform: translateX(-50%);
+  overflow: hidden;
+  padding: 15px 15px 15px 20px;
+  // display: flex;
+  align-items: center;
+  // box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+
+  // &:hover{
+  //     transition: all 0.3s;
+  //     // animation-delay:
+  //     color: #333;
+  //     // transform: translateY(20px)  !important;
+  // }
+}
+
+.entranceBox {
+  animation-duration: 0.3s;
+  animation-timing-function: ease;
+  // -webkit-animation-timing-function: cubic-bezier(.58, .72, .53, .67);
+  animation-name: entry;
+  animation-fill-mode: forwards;
+  // transform: translateX(0)
+}
+
+.entranceBoxOut {
+  animation-duration: 0.3s !important;
+  animation-timing-function: cubic-bezier(0.38, 0.63, 0.56, 0.92) !important;
+
+  animation-name: out !important;
+}
+
+// .leaveBox {
+//     animation-timing-function:ease-in-out;
+//     // -webkit-animation-timing-function: ease-out;
+//     animation-name: leave;
+//     animation-fill-mode: forwards;
+// }
+@keyframes out {
+  0% {
+    opacity: 1;
+    transform: translateY(20px); // top: -100px;
+  }
+
+  100% {
+    opacity: 0;
+    display: none;
+    // top: -20px;
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes entry {
+  0% {
+    opacity: 0.8;
+    // top: -20px;
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(20px); // top: -100px;
+  }
+}
+
+.alert-success {
+  @include alert-theme(#c7fcec, #00c9a7, #00c9a7);
+}
+
+.alert-warning {
+  @include alert-theme(#fff, #ffa963, #ffb38c);
+}
+
+.alert-info {
+  @include alert-theme(#909399, #edf2fc, #ebeef5);
+}
+
+.alert-error {
+  @include alert-theme(#fef0f0, #ce4a4e, #ce4a4e);
+}

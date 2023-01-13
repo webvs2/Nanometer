@@ -8,6 +8,7 @@ import postcss from 'postcss'
 import autoprefixer from 'autoprefixer'
 // import dev from 'rollup-plugin-dev'
 // import livereload from 'rollup-plugin-livereload'
+import jsx from 'rollup-plugin-jsx'
 import rollupPostcss from 'rollup-plugin-postcss'
 import sucrase from '@rollup/plugin-sucrase';
 import typescript from '@rollup/plugin-typescript';
@@ -17,7 +18,7 @@ import typescript from '@rollup/plugin-typescript';
 const path = require('path')
 
 export default {
-  input: 'index.ts',
+  input: './src/index.ts',
   treeshake:true,
   output: {
     file: path.join(__dirname, './build/index.js'),
@@ -33,7 +34,7 @@ export default {
   },
 
   watch: {
-    include: ['src/*.js', 'index.js','styles/**'],
+    include: ['src',],
     exclude: 'node_modules/**',
     failAfterWarnings: true,
     clearScreen:false,
@@ -50,7 +51,7 @@ export default {
     //   exclude: ['node_modules/**'],
     //   transforms: ['typescript']
     // }),
-    // commonjs(),
+    commonjs(),
     babel({
       exclude: 'node_modules/**' 
     }),
@@ -59,6 +60,7 @@ export default {
       exclude:['dist/*','build/*'],
       include:['src/*','index.*']
     }),
+    jsx( {factory: 'React.createElement'} ),
     // peerDepsExternal(),
     scss({
       processor: () => postcss([autoprefixer()]),

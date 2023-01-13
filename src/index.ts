@@ -1,6 +1,5 @@
 'use strict';
-// import './src/resource.js';
-import './styles/style.scss';
+import './css/index.scss';
 import { filter, delay } from 'lodash-es';
 
 var PopupManager = {
@@ -32,9 +31,6 @@ class storeSteward {
 				document.body.removeChild(box)
 			}, 1000, this.store.length);
 			this.store = filter(this.store, (o) => o.id == source.id);
-
-			// console.log('this.store',this.store)
-
 		}, source.animationDuration)
 
 	}
@@ -102,7 +98,11 @@ class MessageClass {
 		if (!option.context) throw ('[message] If you use the object argument form, be aware!"Context" is required')
 		let id = 'message_' + (this.seed++)
 		function MessageConstructor(data: {}):resultType {
-			let box = document.createElement('div');
+
+
+			1
+			let box = <div/>
+			// document.createElement('div');
 			box.className = 'nan-location'
 			let div = document.createElement('div') as HTMLElement;
 			div.className = `alert-${option.type}    nan-alert entranceBox  ${option.egoClass}`
