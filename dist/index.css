@@ -2,14 +2,6 @@
   --succeed-color: #72e985;
 }
 
-.nan-location {
-  position: absolute;
-  top: 0px;
-  left: 0;
-  right: 0;
-  text-align: center;
-}
-
 .nan-alert {
   font-size: 14px;
   min-width: 380px;
@@ -26,6 +18,11 @@
   overflow: hidden;
   padding: 15px 15px 15px 20px;
   align-items: center;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
+  text-align: center;
 }
 
 .entranceBox {
@@ -49,31 +46,41 @@
   100% {
     opacity: 0;
     display: none;
+    top: -20px;
     transform: translateY(-20px);
   }
 }
 @keyframes entry {
   0% {
     opacity: 0.8;
+    top: -20px;
     transform: translateY(-20px);
   }
-  100% {
+  80% {
     opacity: 1;
     transform: translateY(20px);
   }
 }
 .alert-success {
-  color: var(--succeed-color);
+  background-color: #00c9a7;
+  color: #c7fcec;
+  border: solid #00c9a7 1px;
 }
 
 .alert-warning {
   background-color: #ffa963;
+  color: #fff;
+  border: solid #ffb38c 1px;
 }
 
 .alert-info {
   background-color: #edf2fc;
+  color: #909399;
+  border: solid #ebeef5 1px;
 }
 
 .alert-error {
   background-color: #ce4a4e;
+  color: #fef0f0;
+  border: solid #ce4a4e 1px;
 }

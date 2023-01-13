@@ -29,6 +29,7 @@ class storeSteward {
       dom.className = "entranceBoxOut " + dom.className;
       delay(
         function (isEmpty: any) {
+          // entranceBox.
           document.body.removeChild(box);
         },
         1000,
@@ -105,7 +106,7 @@ class MessageClass {
     function MessageConstructor(data: {}): resultType {
       const elem = render({
         tag: "div", children: option.context, attr:
-          { class: `alert-${option.type}    nan-alert entranceBox  ${option.egoClass}`, id: id, style: { zIndex: 1111 } },
+          { class: `alert-${option.type}    nan-alert   ${option.egoClass}`, id: id, style: { zIndex: 1111 } },
 
       });
 
@@ -127,22 +128,6 @@ class MessageClass {
     instances.push(messageBox);
     document.body.appendChild(box);
   }
-  // mountDom(dom: any) {
-  //   if (!this.isContainer) {
-  //     let box = render({
-  //         tag: "div",
-  //         attr:{
-  //           class:'nan-location'
-  //         }
-  //       })
-  //     // document.createElement("div");
-  //     box.className = "nan-location";
-  //     box.id = "nan-location";
-  //     document.body.appendChild(box);
-  //     this.containerDom = box;
-  //     this.isContainer = true;
-  //   }
-  // }
 }
 
 let MessageBox = new MessageClass({});

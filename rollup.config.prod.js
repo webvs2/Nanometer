@@ -29,7 +29,7 @@ config.plugins=config.plugins.concat([
         }
     }),
     // myExample()
-    // analyze()
+    analyze()
 ])
 
 
