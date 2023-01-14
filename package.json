@@ -8,7 +8,8 @@
   "author": "nanomster",
   "license": "ISC",
   "files": [
-    "dist"
+    "dist",
+    "typings"
   ],
   "keywords": [
     "message",
@@ -27,13 +28,7 @@
     }
   },
   "types": "./typings/main.d.ts",
-  "devDependencies": {},
-  "scripts": {
-    "sync": "node synchronization.js",
-    "build": " cross-env NODE_ENV=production rollup -c rollup.config.prod.js",
-    "serve": " cross-env NODE_ENV=dev rollup -c rollup.config.dev.js --watch "
-  },
-  "dependencies": {
+  "devDependencies": {
     "@babel/core": "^7.18.9",
     "@optimize-lodash/rollup-plugin": "^4.0.1",
     "@rollup/plugin-commonjs": "^22.0.1",
@@ -72,5 +67,12 @@
     "the-answer": "^1.0.0",
     "typescript": "^4.8.3",
     "vue-style-loader": "^4.1.3"
+  },
+  "scripts": {
+    "sync": "node synchronization.js",
+    "build": " cross-env NODE_ENV=production rollup -c rollup.config.prod.js",
+    "serve": " cross-env NODE_ENV=dev rollup -c rollup.config.dev.js --watch "
+  },
+  "dependencies": {
   }
 }
