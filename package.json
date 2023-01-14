@@ -1,7 +1,7 @@
 {
   "name": "nanometer-message",
   "sideEffects": false,
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Simple message prompts",
   "main": "dist/index.js",
   "style": "dist/index.css",
@@ -18,12 +18,12 @@
   ],
   "exports": {
     ".": {
-      "import":"./dist/index.js",
-      "require":"./dist/index.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
     },
     "./dist/index.css": {
-      "import":"./dist/index.css",
-      "require":"./dist/index.css"
+      "import": "./dist/index.css",
+      "require": "./dist/index.css"
     }
   },
   "types": "./typings/main.d.ts",
