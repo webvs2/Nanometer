@@ -46,29 +46,27 @@ import "nanometer-message/dist/build.css"
 Vue.prototype.$meessage = Message（Vue2）  为每个 type 定义了各自的方法，如 Message.success(options)。
 ```
 
-:::warning
-注意：在vue中使用需要在style里面引入
-:::
+ 注意：在vue中使用需要在style里面引入
 
-```
+```bash
 @import url('nanometer-message/dist/index.css');
 ```
-
-<h2 align="left">API</h2>
-
-* The pattern of object customization has been added. The previous way of use remains the same, which requires more flexible use of option
 
 ```bash
  Message(type, context)
 ```
 
-```
+```bash
 Message.success(context)。
 ```
 
 ```bash
  Message({option})
 ```
+
+<h2 align="left">API</h2>
+
+* The pattern of object customization has been added. The previous way of use remains the same, which requires more flexible use of option
 
 |Name|Description|
 |:--:|:----------|
