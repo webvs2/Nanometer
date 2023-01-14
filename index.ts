@@ -1,6 +1,6 @@
 "use strict";
 import "./src/css/index.scss";
-import { filter, delay } from "lodash-es";
+import { filter, delay } from "lodash";
 import render from "./src/render";
 var PopupManager = {
   zIndex: 100,
@@ -20,28 +20,31 @@ class storeSteward {
     if (this.store.length > 10) {
       this.closeAll();
     }
-    this.store.push(value);
-    this.pastDue.push(this.timebomb(value));
+    let index =this.pastDue.length
+    this.pastDue.push(this.timebomb(value,index));
   }
-  timebomb(data: { source: any; dom: any; box: any }) {
-    let { source, dom, box } = data;
+  timebomb(data,index) {
+    let { source, dom } = data;
+    dom.addEventListener("transitionend", function () {}, false);
     return setTimeout(() => {
-      dom.className = "entranceBoxOut " + dom.className;
-      // delay(
-      //   function (isEmpty: any) {
-      //     // entranceBox.
-      //     document.body.removeChild(box);
-      //   },
-      //   1000,
-      //   this.store.length
-      // );
-      this.store = filter(this.store, (o) => o.id == source.id);
+    let { pastDue } = this;
+      dom.className = "out " + dom.className;
+      dom.addEventListener(
+        "animationend",
+        function () {
+          document.body.removeChild(dom);
+          console.log("timebomb", pastDue);
+        },
+        false
+      );
+      console.log('index',index)
+      clearTimeout(pastDue[index]);
+      pastDue[index] = null; 
     }, source.animationDuration);
   }
   closeAll() {
     return new Promise((resolve, reject) => {
-      this.store.map((item, index) => {
-        this.closeSingle(item.id, item.source);
+      this.pastDue.map((item, index) => {
       });
       resolve(true);
     });
@@ -52,7 +55,7 @@ class storeSteward {
     }
   }
 }
-let instances = new storeSteward([]);
+let store = new storeSteward([]);
 
 //	Exposure to message objects is not recommended, and is destroyed for more powerful boxes
 interface resultType {
@@ -74,17 +77,13 @@ interface optionType {
 class MessageClass {
   option = {
     type: "info",
-    animationDuration: 3000, //ms
+    animationDuration: 1000, //ms
     destroy: null,
+    egoClass: "",
   } as optionType;
   seed: number = 0;
   isContainer: boolean = false;
   containerDom: HTMLElement;
-  // defaultOption: {
-  //   type: "info",
-  //   animationDuration: 3000, //ms
-  //   destroy: null,
-  // };
   constructor(option) {
     // process.ENV
     // if(){
@@ -95,17 +94,9 @@ class MessageClass {
   }
   alteration(option) {
     this.option = Object.assign({}, this.option, option);
-    console.log("option", this.isContainer);
     this.establish();
   }
-  // reate
-
   establish() {
-    // let option: {
-    //   context?: any;
-    //   egoClass?: any;
-    //   type?: any;
-    // } = this.option;
     let { option } = this;
     if (!option.context)
       throw '[message] If you use the object argument form, be aware!"Context" is required';
@@ -115,37 +106,32 @@ class MessageClass {
         tag: "div",
         children: option.context,
         attr: {
-          class: `alert-${option.type}   nan-alert  enter ${option.egoClass} `,
+          class: `alert-${option.type} nan-alert enter ${option.egoClass} `,
           id: id,
           style: { zindex: 1111 },
         },
       });
 
       return {
-        // dom: div,
         dom: elem,
         id: id,
         domID: "#" + id,
         source: data,
-        // box: elem,
       } as resultType;
     }
     //	 Generate and add to the body...
     let messageBox = MessageConstructor(option);
     let { source, dom, containerDom } = messageBox;
+    let { seed } = this;
     // {}
-    source.animationDuration =
-      source.animationDuration + instances.store.length * 60;
-    // containerDom = this.containerDom;
-    // instances.push(messageBox);
-    // console.log('dom',dom)
+    source.animationDuration = source.animationDuration + seed * 60;
+    store.push(messageBox);
     document.body.appendChild(dom);
   }
 }
 
 let MessageBox = new MessageClass({});
 let message = (...data: any[]) => {
-  console.log("data", data);
   MessageBox.alteration(
     data.length < 2
       ? data[0]

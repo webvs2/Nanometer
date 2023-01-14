@@ -4,21 +4,17 @@ interface objType {
   attr?: any;
 }
 
-let render = (obj: objType, root?: HTMLElement) => {
+let render = (obj: objType, root?: HTMLElement)=> {
   const el = document.createElement(obj.tag);
   if (!!obj.attr) {
     Object.keys(obj.attr).map((item) => {
-      // el.setAttribute(item, property || obj.attr?.[item]);
       let property: any = null
       if (typeof obj.attr?.[item] === 'object') {
         property = JSON.stringify(obj.attr?.[item])
       }
       el.setAttribute(item, property || obj.attr?.[item]);
-
-      // console.log('obj',   )
     });
   }
-  console.log('121')
   if (typeof obj.children === "string") {
     const text = document.createTextNode(obj.children);
     el.appendChild(text);

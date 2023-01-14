@@ -18,15 +18,29 @@
     // transform: translateY(20px); // top: -100px;
   }
 }
+$startingPosition: 20px;
+$destination: 25px;
+
 @keyframes entry {
   0% {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-$destination);
   }
 
   100% {
     opacity: 1;
-    box-shadow: 0 2px 12px 0 rgba(238, 5, 5, 0.4);
-    transform: translateY(20px); // top: -100px;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.2);
+    transform: translateY($startingPosition); // top: -100px;
+  }
+}
+@keyframes out {
+  0% {
+    opacity: 1;
+    transform: translateY($startingPosition); // top: -100px;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-$destination);
   }
 }

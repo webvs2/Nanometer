@@ -1,15 +1,18 @@
 @charset "utf-8";
-@import './animation.scss';
+@import "./animation.scss";
 
 :root {
-  --succeed-color: #72e985;
+  --nan-succeed-color: #72e985;
+  --nan-error-color: #ce4a4e;
+
   --nan-text-align: left;
   --nan-padding: 12px 18px;
+  --nan-animation-duration:.5s;
 }
 @mixin alert-theme($color, $bkColor, $side) {
   background-color: $bkColor;
   color: #fff;
-  border: solid $side 1px;
+  // border: solid $side 1px;
 }
 
 .nan-alert {
@@ -37,39 +40,23 @@
 }
 
 .enter {
-  // opacity: 0;
-  animation-duration: 0.3s;
+  opacity: 0;
+  animation-duration:.4s;
   animation-timing-function: ease;
   animation-name: entry;
   animation-fill-mode: forwards;
 }
 
-// .out {
-//   animation-duration: 0.3s !important;
-//   animation-timing-function: cubic-bezier(0.38, 0.63, 0.56, 0.92) !important;
+.out {
+  animation-duration: var(--nan-animation-duration);
+  animation-timing-function: cubic-bezier(0.38, 0.63, 0.56, 0.92);
 
-//   animation-name: out !important;
-// }
-
-@keyframes out {
-  0% {
-    opacity: 1;
-    transform: translateY(20px); // top: -100px;
-  }
-
-  100% {
-    opacity: 0;
-    display: none;
-    top: -20px;
-    transform: translateY(-20px);
-  }
+  animation-name: out;
 }
-
-
 // box-shadow: 0 2px 12px 0 rgba(209, 17, 17, 0.5);
 
 .alert-success {
-  @include alert-theme(#c7fcec, #00c9a7, #00c9a7);
+  @include alert-theme(#c7fcec, #00c9a7, var(--nan-succeed-color));
 }
 
 .alert-warning {
@@ -81,5 +68,5 @@
 }
 
 .alert-error {
-  @include alert-theme(#fef0f0, #ce4a4e, #ce4a4e);
+  @include alert-theme(#fef0f0, #ce4a4e, var(--nan-error-color));
 }

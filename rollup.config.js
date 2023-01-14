@@ -12,6 +12,7 @@ import autoprefixer from 'autoprefixer'
 import rollupPostcss from 'rollup-plugin-postcss'
 import sucrase from '@rollup/plugin-sucrase';
 import typescript from '@rollup/plugin-typescript';
+import { optimizeLodashImports } from "@optimize-lodash/rollup-plugin";
 // import myExample from './module/rollup-plugin-my-example.js';
 
 // import peerDepsExternal from 'rollup-plugin-peer-deps-external';
@@ -23,6 +24,7 @@ export default {
   output: {
     file: path.join(__dirname, './build/index.js'),
     format: 'umd',
+    // dir:''
     name: '$message',
     sourcemap: true,
     globals: {
@@ -66,6 +68,9 @@ export default {
       ],
       sass: require('sass')
     }),
+    // optimizeLodashImports({useLodashEs:true}),
+    optimizeLodashImports(),
+
     // myExample()
 
   ],
