@@ -16,18 +16,31 @@
 @keyframes entry {
   0% {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-25px);
   }
   100% {
     opacity: 1;
-    box-shadow: 0 2px 12px 0 rgba(238, 5, 5, 0.4);
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.2);
     transform: translateY(20px);
   }
 }
+@keyframes out {
+  0% {
+    opacity: 1;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+}
 :root {
-  --succeed-color: #72e985;
+  --base-font-color: #303133;
+  --nan-succeed-color: #72e985;
+  --nan-error-color: #ce4a4e;
   --nan-text-align: left;
   --nan-padding: 12px 18px;
+  --nan-animation-duration: 0.5s;
 }
 
 .nan-alert {
@@ -53,44 +66,36 @@
 }
 
 .enter {
-  animation-duration: 0.3s;
+  opacity: 0;
+  animation-duration: 0.4s;
   animation-timing-function: ease;
   animation-name: entry;
   animation-fill-mode: forwards;
 }
 
-@keyframes out {
-  0% {
-    opacity: 1;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 0;
-    display: none;
-    top: -20px;
-    transform: translateY(-20px);
-  }
+.out {
+  animation-duration: var(--nan-animation-duration);
+  animation-timing-function: cubic-bezier(0.38, 0.63, 0.56, 0.92);
+  animation-name: out;
 }
+
 .alert-success {
   background-color: #00c9a7;
   color: #fff;
-  border: solid #00c9a7 1px;
 }
 
 .alert-warning {
   background-color: #ffa963;
   color: #fff;
-  border: solid #ffb38c 1px;
 }
 
 .alert-info {
+  color: var(--base-font-color);
   background-color: #edf2fc;
   color: #fff;
-  border: solid #ebeef5 1px;
 }
 
 .alert-error {
   background-color: #ce4a4e;
   color: #fff;
-  border: solid #ce4a4e 1px;
 }

@@ -65,7 +65,7 @@
 }
 
 .alert-info {
-  color: var(--base-font-color);
+  color: var(--base-font-color) !important;
   @include alert-theme(#909399, #edf2fc, #ebeef5);
 }
 

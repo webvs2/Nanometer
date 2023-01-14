@@ -1,12 +1,12 @@
 "use strict";
 import "./src/css/index.scss";
-import { filter, delay } from "lodash";
+// import { filter, delay } from "lodash";
 import render from "./src/render";
 var PopupManager = {
-  zIndex: 100,
-  nextZIndex: function (): number {
-    return PopupManager.zIndex++;
-  },
+  // zIndex: 100,
+  // nextZIndex: function (): number {
+  //   return PopupManager.zIndex++;
+  // },
 };
 // let seed=1;
 class storeSteward {
@@ -102,10 +102,11 @@ class MessageClass {
     this.establish();
   }
   establish() {
-    let { option } = this;
+    let { option,seed} = this;
     if (!option.context)
       throw '[message] If you use the object argument form, be aware!"Context" is required';
-    let id = "message_" + this.seed++;
+    let id = "message_" + seed++;
+    // console.log('this.seed',this.seed)
     function MessageConstructor(data: {}): resultType {
       const elem = render({
         tag: "div",
@@ -113,7 +114,7 @@ class MessageClass {
         attr: {
           class: `alert-${option.type} nan-alert enter ${option.egoClass} `,
           id: id,
-          style: { zindex: 1111 },
+          style: { zindex: 100+ seed},
         },
       });
 
