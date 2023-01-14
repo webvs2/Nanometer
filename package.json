@@ -16,6 +16,16 @@
     "vue-alert",
     "alert"
   ],
+  "exports": {
+    ".": {
+      "import":"./dist/index.js",
+      "require":"./dist/index.js"
+    },
+    "./dist/index.css": {
+      "import":"./dist/index.css",
+      "require":"./dist/index.css"
+    }
+  },
   "types": "./typings/main.d.ts",
   "devDependencies": {},
   "scripts": {
