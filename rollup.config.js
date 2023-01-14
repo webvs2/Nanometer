@@ -18,7 +18,7 @@ import typescript from '@rollup/plugin-typescript';
 const path = require('path')
 
 export default {
-  input: './src/index.ts',
+  input: './index.ts',
   treeshake:true,
   output: {
     file: path.join(__dirname, './build/index.js'),
@@ -32,9 +32,9 @@ export default {
       arrowFunctions:true
     }
   },
-
+  cache:true,
   watch: {
-    include: ['src',],
+    include: ['index.ts','src/**'],
     exclude: 'node_modules/**',
     failAfterWarnings: true,
     clearScreen:false,
@@ -48,14 +48,14 @@ export default {
     }),
     // jsx( {factory: 'React.createElement'} ),
     commonjs(),
+    typescript({
+      exclude:['dist/*','build/*'],
+      include:['src/*','./index.ts']
+    }),
     babel({
       exclude: 'node_modules/**' 
     }),
     json(),
-    typescript({
-      exclude:['dist/*','build/*'],
-      include:['src/*','index.*']
-    }),
     // peerDepsExternal(),
     scss({
       fileName: 'index.css',
@@ -64,7 +64,6 @@ export default {
         path.join(__dirname, '../../node_modules/'),
         'node_modules/'
       ],
-     
       sass: require('sass')
     }),
     // myExample()

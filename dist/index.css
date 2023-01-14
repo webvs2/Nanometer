@@ -1,41 +1,62 @@
+.flicker {
+  animation-duration: 1s;
+  animation-name: flicker;
+  animation-iteration-count: infinite;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0;
+    box-shadow: 0 2px 12px 0 rgba(209, 17, 17, 0.1);
+  }
+  100% {
+    box-shadow: 0 2px 12px 0 rgba(209, 17, 17, 0.5);
+  }
+}
+@keyframes entry {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    box-shadow: 0 2px 12px 0 rgba(238, 5, 5, 0.4);
+    transform: translateY(20px);
+  }
+}
 :root {
   --succeed-color: #72e985;
+  --nan-text-align: left;
+  --nan-padding: 12px 18px;
 }
 
 .nan-alert {
   font-size: 14px;
   min-width: 380px;
-  box-sizing: border-box;
-  border-radius: 4px;
-  opacity: 0;
   display: inline-block;
-  max-width: 80%;
   margin: 0 auto;
-  background-color: #edf2fc;
-  color: #909399;
-  border: solid #ebeef5 1px;
-  transform: translateX(-50%);
-  overflow: hidden;
-  padding: 15px 15px 15px 20px;
-  align-items: center;
+  padding: var(--nan-padding);
+  text-align: var(--nan-text-align);
+  border-radius: 6px;
   position: absolute;
   top: 0px;
-  left: 0;
-  right: 0;
-  text-align: center;
+  left: 50%;
+  right: 50%;
+  translate: -50% 0;
+  overflow: hidden;
+}
+.nan-alert::after {
+  content: " ";
+  width: 100px;
+  height: 100px;
+  background-color: #ce4a4e;
 }
 
-.entranceBox {
+.enter {
   animation-duration: 0.3s;
   animation-timing-function: ease;
   animation-name: entry;
   animation-fill-mode: forwards;
-}
-
-.entranceBoxOut {
-  animation-duration: 0.3s !important;
-  animation-timing-function: cubic-bezier(0.38, 0.63, 0.56, 0.92) !important;
-  animation-name: out !important;
 }
 
 @keyframes out {
@@ -50,20 +71,9 @@
     transform: translateY(-20px);
   }
 }
-@keyframes entry {
-  0% {
-    opacity: 0.8;
-    top: -20px;
-    transform: translateY(-20px);
-  }
-  80% {
-    opacity: 1;
-    transform: translateY(20px);
-  }
-}
 .alert-success {
   background-color: #00c9a7;
-  color: #c7fcec;
+  color: #fff;
   border: solid #00c9a7 1px;
 }
 
@@ -75,12 +85,12 @@
 
 .alert-info {
   background-color: #edf2fc;
-  color: #909399;
+  color: #fff;
   border: solid #ebeef5 1px;
 }
 
 .alert-error {
   background-color: #ce4a4e;
-  color: #fef0f0;
+  color: #fff;
   border: solid #ce4a4e 1px;
 }

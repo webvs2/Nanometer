@@ -33,9 +33,5 @@ config.plugins=config.plugins.concat([
 ])
 
 
-
-// console.log(config)
-// console.log(config.output)
-
 export default config
 

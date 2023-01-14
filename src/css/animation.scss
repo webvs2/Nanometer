@@ -1,0 +1,32 @@
+.flicker {
+  animation-duration: 1s;
+  // animation-timing-function: ease;
+  animation-name: flicker;
+  // animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+@keyframes flicker {
+  0% {
+    opacity: 0;
+    // transform: translateY(-20px);
+    box-shadow: 0 2px 12px 0 rgba(209, 17, 17, 0.1);
+  }
+
+  100% {
+    // opacity: 1;
+    box-shadow: 0 2px 12px 0 rgba(209, 17, 17, 0.5);
+    // transform: translateY(20px); // top: -100px;
+  }
+}
+@keyframes entry {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    box-shadow: 0 2px 12px 0 rgba(238, 5, 5, 0.4);
+    transform: translateY(20px); // top: -100px;
+  }
+}

@@ -13,10 +13,19 @@
   "keywords": [
     "message",
     "nanometer-message",
+    "vue-alert",
     "alert"
   ],
   "types": "./typings/main.d.ts",
   "devDependencies": {
+  },
+  "scripts": {
+    "sync": "node synchronization.js",
+    "build": " cross-env NODE_ENV=production rollup -c rollup.config.prod.js",
+    "serve": " cross-env NODE_ENV=dev rollup -c rollup.config.dev.js --watch "
+  },
+  "dependencies": {
+    "rollup-plugin-jsx": "^1.0.3",
     "@babel/core": "^7.18.9",
     "@rollup/plugin-commonjs": "^22.0.1",
     "@rollup/plugin-html": "^0.2.4",
@@ -53,13 +62,5 @@
     "the-answer": "^1.0.0",
     "typescript": "^4.8.3",
     "vue-style-loader": "^4.1.3"
-  },
-  "scripts": {
-    "sync": "node synchronization.js",
-    "build": " cross-env NODE_ENV=production rollup -c rollup.config.prod.js",
-    "serve": " cross-env NODE_ENV=dev rollup -c rollup.config.dev.js --watch --failAfterWarnings"
-  },
-  "dependencies": {
-    "rollup-plugin-jsx": "^1.0.3"
   }
 }

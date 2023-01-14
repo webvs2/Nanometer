@@ -27,9 +27,9 @@
 </head>
 
 <body>
-    <h1 style=" text-align: center;margin-top: 100px; ">Rollup</h1>
+    <h1 style=" text-align: center;margin-top: 100px; ">nan-message</h1>
     <h3 style="color: #ba7ba1;">This is an amusement park</h3>
-
+    <!-- <span style="display: inline-block;font-size: 12px;font-family: 'Courier New', Courier, monospace;margin-left: 20px;color: #333;" >rollup Support development </span> -->
     <div class="box">
         <button id="button">消息option</button>
         <button id="buttonfast">快捷消息</button>
@@ -45,6 +45,13 @@
         // window._=31325
         // MyBundle()
         let a = 1;
+        $message({
+                type: 'success',
+                context: 'Quotes of the day',
+                destroy: function () {
+                    console.log('Whatever I believed, I did; and whatever I did, I did with my whole heart and mind.')
+                }
+            })
         document.getElementById('button').onclick = function () {
             // console.log($message('success',1))
             $message({
