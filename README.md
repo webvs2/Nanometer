@@ -1,6 +1,10 @@
+<div align=centre>
+
 ![Segmentfault](https://github.com/webvs2/Nanometer/blob/master/src/assets/img/rain.svg)
 
 <p>Not everyone can be a great artist, but future artists can come from any corner</p>
+
+</div>
 
 <h2 align="centre">What is nanometer-message?</h2>
 *每一条消息都需要珍惜。

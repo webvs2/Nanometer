@@ -93,7 +93,6 @@ class MessageClass {
     if (!option.context)
       throw '[message] If you use the object argument form, be aware!"Context" is required';
     let id = "message_" + seed++;
-    // console.log('this.seed',this.seed)
     function MessageConstructor(data: {}): resultType {
       const elem = render({
         tag: "div",
