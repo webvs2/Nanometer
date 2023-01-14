@@ -4,6 +4,8 @@ import { terser } from "rollup-plugin-terser";
 import analyze from 'rollup-plugin-analyzer'
 const rimraf = require('rimraf');
 const  _console =require('console-color-mr')
+// import css from "rollup-plugin-import-css";
+import css from 'rollup-plugin-css-only'
 // import myExample from './src/rollup-plugin-my-example.js';
 rimraf('./dist/*',(err)=>{
     if(err){
@@ -21,6 +23,7 @@ let output={
 }
 config.output=Object.assign({},config.output,output)
 config.plugins=config.plugins.concat([
+    // css(),
     terser({
         compress: {
             drop_console: true,
@@ -29,7 +32,7 @@ config.plugins=config.plugins.concat([
         }
     }),
     // myExample()
-    analyze(),
+    // analyze(),
 ])
 
 

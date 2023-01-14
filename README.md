@@ -47,9 +47,8 @@ var Message = require('nanometer-message')
 
 ```js
 import Message from 'nanometer-message';
-import "nanometer-message/dist/index.css"
 
-Vue.prototype.$meessage = Message（Vue2）  为每个 type 定义了各自的方法，如 Message.success(options)。
+Vue.prototype.$meessage = Message  为每个 type 定义了各自的方法，如 Message.success(options)。
 ```
 
  注意：在vue中使用需要在style里面引入
