@@ -1,3 +1,5 @@
+![Segmentfault](http://static.segmentfault.com/build/global/img/logo-w.svg)
+
 <p>Not everyone can be a great artist, but future artists can come from any corner</p>
 
 <h2 align="centre">What is nanometer-message?</h2>
