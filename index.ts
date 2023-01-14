@@ -2,16 +2,9 @@
 import "./src/css/index.scss";
 // import { filter, delay } from "lodash";
 import render from "./src/render";
-var PopupManager = {
-  // zIndex: 100,
-  // nextZIndex: function (): number {
-  //   return PopupManager.zIndex++;
-  // },
-};
-// let seed=1;
 class storeSteward {
-  store: any[]=[];
-  pastDue: any[]=[];
+  store: any[] = [];
+  pastDue: any[] = [];
   constructor(Store) {
     this.store = Store;
     // this.pastDue = [];
@@ -28,13 +21,12 @@ class storeSteward {
       dom.addEventListener(
         "animationend",
         function () {
-          source.postEvent?.()
+          source.postEvent?.();
           document.body.removeChild(dom);
           // console.log("timebomb", pastDue);
         },
         false
       );
-      console.log("index", index);
       clearTimeout(pastDue[index]);
       pastDue[index] = null;
     }, source.animationDuration);
@@ -47,18 +39,14 @@ class storeSteward {
     });
     pastDue = [];
     return new Promise((resolve, reject) => {
-      if(!pastDue.length){
+      if (!pastDue.length) {
         resolve(true);
-      }else{
+      } else {
         reject(false);
       }
     });
   }
-  // closeSingle(id: any, source: { postEvent: () => void }) {
-  //   if (!!source.postEvent) {
-  //     source.postEvent();
-  //   }
-  // }
+
 }
 let store = new storeSteward([]);
 
@@ -91,18 +79,17 @@ class MessageClass {
   containerDom: HTMLElement;
   constructor(option) {
     // process.ENV
-    // if(){
-
-    // }
-    console.log("thanks!😄");
-    // console.log(process.env)
+    if (false) {
+      console.log("thanks!😄");
+    }
   }
   alteration(option) {
     this.option = Object.assign({}, this.option, option);
     this.establish();
   }
   establish() {
-    let { option,seed} = this;
+    let { option, seed } = this;
+    console.log('this',this)
     if (!option.context)
       throw '[message] If you use the object argument form, be aware!"Context" is required';
     let id = "message_" + seed++;
@@ -114,7 +101,7 @@ class MessageClass {
         attr: {
           class: `alert-${option.type} nan-alert enter ${option.egoClass} `,
           id: id,
-          style: { zindex: 100+ seed},
+          style: { zindex: 100 + seed },
         },
       });
 
@@ -128,7 +115,6 @@ class MessageClass {
     //	 Generate and add to the body...
     let messageBox = MessageConstructor(option);
     let { source, dom, containerDom } = messageBox;
-    let { seed } = this;
     source.animationDuration = source.animationDuration + seed * 60;
     store.push(messageBox);
     document.body.appendChild(dom);
