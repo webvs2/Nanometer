@@ -19,8 +19,8 @@
 Install with script:
 
 ```bash
-<script src="build.js"></script>
-<link rel="stylesheet" type="text/css" href="build.css" />
+<script src="index.js"></script>
+<link rel="stylesheet" type="text/css" href="index.css" />
 ```
 
 Install with npm:
