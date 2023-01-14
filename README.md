@@ -39,7 +39,7 @@ npm i nanometer-message
 
 ```js  
 var Message = require('nanometer-message')
-<link rel="stylesheet" type="text/css" href="dist/style.css" />
+<link rel="stylesheet" type="text/css" href="dist/index.css" />
  Message({option})    为每个 type 定义了各自的方法，如 Message.success(options)。
 ```
 
@@ -47,7 +47,7 @@ var Message = require('nanometer-message')
 
 ```js
 import Message from 'nanometer-message';
-import "nanometer-message/dist/build.css"
+import "nanometer-message/dist/index.css"
 
 Vue.prototype.$meessage = Message（Vue2）  为每个 type 定义了各自的方法，如 Message.success(options)。
 ```
