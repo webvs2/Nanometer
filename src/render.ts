@@ -15,10 +15,11 @@ let render = (obj: objType, root?: HTMLElement)=> {
       el.setAttribute(item, property || obj.attr?.[item]);
     });
   }
-  if (typeof obj.children === "string") {
+  if (typeof obj.children === "string"||"number") {
     const text = document.createTextNode(obj.children);
     el.appendChild(text);
-  } else if (obj.children) {
+  } else if (  obj.children ) {
+    console.log(' obj.children',obj.children)
     obj.children.forEach((element) => render(element, el));
   }
   return root ? root.appendChild(el) : el;

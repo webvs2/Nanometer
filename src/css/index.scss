@@ -2,12 +2,13 @@
 @import "./animation.scss";
 
 :root {
+  --base-font-color: #303133;
   --nan-succeed-color: #72e985;
   --nan-error-color: #ce4a4e;
 
   --nan-text-align: left;
   --nan-padding: 12px 18px;
-  --nan-animation-duration:.5s;
+  --nan-animation-duration: 0.5s;
 }
 @mixin alert-theme($color, $bkColor, $side) {
   background-color: $bkColor;
@@ -41,7 +42,7 @@
 
 .enter {
   opacity: 0;
-  animation-duration:.4s;
+  animation-duration: 0.4s;
   animation-timing-function: ease;
   animation-name: entry;
   animation-fill-mode: forwards;
@@ -64,6 +65,7 @@
 }
 
 .alert-info {
+  color: var(--base-font-color);
   @include alert-theme(#909399, #edf2fc, #ebeef5);
 }
 

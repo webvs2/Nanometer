@@ -10,54 +10,59 @@ var PopupManager = {
 };
 // let seed=1;
 class storeSteward {
-  store: any[];
-  pastDue: any[];
+  store: any[]=[];
+  pastDue: any[]=[];
   constructor(Store) {
     this.store = Store;
-    this.pastDue = [];
+    // this.pastDue = [];
   }
   push(value) {
-    if (this.store.length > 10) {
-      this.closeAll();
-    }
-    let index =this.pastDue.length
-    this.pastDue.push(this.timebomb(value,index));
+    let index = this.pastDue.length;
+    this.pastDue.push(this.timebomb(value, index));
   }
-  timebomb(data,index) {
+  timebomb(data, index) {
     let { source, dom } = data;
-    dom.addEventListener("transitionend", function () {}, false);
     return setTimeout(() => {
-    let { pastDue } = this;
+      let { pastDue } = this;
       dom.className = "out " + dom.className;
       dom.addEventListener(
         "animationend",
         function () {
+          source.postEvent?.()
           document.body.removeChild(dom);
-          console.log("timebomb", pastDue);
+          // console.log("timebomb", pastDue);
         },
         false
       );
-      console.log('index',index)
+      console.log("index", index);
       clearTimeout(pastDue[index]);
-      pastDue[index] = null; 
+      pastDue[index] = null;
     }, source.animationDuration);
   }
   closeAll() {
+    let { pastDue } = this;
+    pastDue.map((item, index) => {
+      clearTimeout(item);
+      item = null;
+    });
+    pastDue = [];
     return new Promise((resolve, reject) => {
-      this.pastDue.map((item, index) => {
-      });
-      resolve(true);
+      if(!pastDue.length){
+        resolve(true);
+      }else{
+        reject(false);
+      }
     });
   }
-  closeSingle(id: any, source: { destroy: () => void }) {
-    if (!!source.destroy) {
-      source.destroy();
-    }
-  }
+  // closeSingle(id: any, source: { postEvent: () => void }) {
+  //   if (!!source.postEvent) {
+  //     source.postEvent();
+  //   }
+  // }
 }
 let store = new storeSteward([]);
 
-//	Exposure to message objects is not recommended, and is destroyed for more powerful boxes
+//	Exposure to message objects is not recommended, and is postEvented for more powerful boxes
 interface resultType {
   dom: HTMLElement;
   id: String;
@@ -71,14 +76,14 @@ interface optionType {
   animationDuration: number; //ms
   egoClass?: string;
   context?: string;
-  destroy: null;
+  postEvent: null;
 }
 
 class MessageClass {
   option = {
     type: "info",
     animationDuration: 1000, //ms
-    destroy: null,
+    postEvent: null,
     egoClass: "",
   } as optionType;
   seed: number = 0;
@@ -123,7 +128,6 @@ class MessageClass {
     let messageBox = MessageConstructor(option);
     let { source, dom, containerDom } = messageBox;
     let { seed } = this;
-    // {}
     source.animationDuration = source.animationDuration + seed * 60;
     store.push(messageBox);
     document.body.appendChild(dom);
