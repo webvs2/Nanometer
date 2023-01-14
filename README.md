@@ -1,4 +1,4 @@
-<div align=centre>
+<div align="center">
 
 ![Segmentfault](https://github.com/webvs2/Nanometer/blob/master/src/assets/img/rain.svg)
 
