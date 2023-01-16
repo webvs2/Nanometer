@@ -68,7 +68,7 @@ Vue.prototype.$meessage = Message
 |Name|Description|
 |:--:|:----------|
 |[type]|The current state of the message. [success|warning|info|error]|
-|[durationTime]| ( <s>animationDuration</s>abandoned ,Use this instead)  Buffer animation duration(The default for 3 seconds)|
+|[durationTime]| ( <s>animationDuration</s> abandoned ,Use this instead)  Buffer animation duration(The default for 3 seconds)|
 |[calss]| ( <s>egoClass</s> abandoned,Use this instead)   CSS state customization|
 |[content]| ( <s>context</s> abandoned,Use this instead ) Message content.Please note: this is a must|
 |[postEvent]| (<s>destroy</s> abandoned,Use this instead )  A callback after the message has disappeared |
