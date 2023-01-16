@@ -1,4 +1,4 @@
-@import url("../assets/icon/iconfont.css");
+@import "../../src/assets/icon/iconfont.css";
 .flicker {
   animation-duration: 1s;
   animation-name: flicker;
@@ -47,7 +47,8 @@
 .nan-alert {
   font-size: 14px;
   min-width: 380px;
-  display: inline-block;
+  display: flex;
+  align-items: center;
   margin: 0 auto;
   padding: var(--nan-padding);
   text-align: var(--nan-text-align);
@@ -59,13 +60,6 @@
   translate: -50% 0;
   overflow: hidden;
 }
-.nan-alert::after {
-  content: " ";
-  width: 100px;
-  height: 100px;
-  background-color: #ce4a4e;
-}
-
 .enter {
   opacity: 0;
   animation-duration: 0.4s;
@@ -84,9 +78,15 @@
   background-color: #00c9a7;
   color: #fff;
 }
+.alert-success .nan-icon {
+  color: #4FFBDF;
+}
 
 .alert-warning {
   background-color: #ffa963;
+  color: #fff;
+}
+.alert-warning .nan-icon {
   color: #fff;
 }
 
@@ -95,14 +95,21 @@
   background-color: #edf2fc;
   color: #fff;
 }
+.alert-info .nan-icon {
+  color: #909399;
+}
 
 .alert-error {
   background-color: #ce4a4e;
   color: #fff;
 }
+.alert-error .nan-icon {
+  color: #fef0f0;
+}
 
 .nan-icon {
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: 400;
   display: inline-block;
-  color: red;
+  margin-right: 8px;
 }
