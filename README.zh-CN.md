@@ -71,15 +71,15 @@ Message.success(context)。
 
 <h2 align="left">API</h2>
 
-* The pattern of object customization has been added. The previous way of use remains the same, which requires more flexible use of option
+* 添加了对象自定义模式。以前的使用方式不变，这就需要更灵活地使用期权
 
 |Name|Description|
 |:--:|:----------|
 |[type]|The current state of the message. [success,warning,info,error]|
 |[durationTime]| (废弃 <s> animationDuration</s>，更换为 durationTime) Buffer animation duration(The default for 3 seconds)|
 |[egoClass]|(废弃 <s> egoClass</s>，更换为 class) CSS state customization|
-|[context]|(废弃context，更换为 content) Message content.Please note: this is a must|
-|[destroy]| (废弃destroy，更换为 postEvent)A callback after the message has disappeared |
+|[context]|(废弃 <s> context</s>，更换为 content) Message content.Please note: this is a must|
+|[destroy]| (废弃 <s>destroy</s>，更换为 postEvent)A callback after the message has disappeared |
 
 <h2 align="left">Contact the author</h2>
 
