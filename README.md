@@ -68,7 +68,7 @@ Vue.prototype.$meessage = Message
 |Name|Description|
 |:--:|:----------|
 |[type]|The current state of the message. [success,warning,info,error]|
-|[animationDuration]|Buffer animation duration(The default for 3 seconds)|
+|[durationTime]| (egoClass animationDuration,Use this instead)  Buffer animation duration(The default for 3 seconds)|
 |[calss]| (egoClass abandoned,Use this instead)   CSS state customization|
 |[content]| (context abandoned,Use this instead ) Message content.Please note: this is a must|
 |[postEvent]| (destroy abandoned,Use this instead )  A callback after the message has disappeared |
