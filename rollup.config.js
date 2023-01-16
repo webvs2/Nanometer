@@ -8,15 +8,11 @@ import postcss from 'postcss'
 import autoprefixer from 'autoprefixer'
 // import dev from 'rollup-plugin-dev'
 // import livereload from 'rollup-plugin-livereload'
-// import jsx from 'rollup-plugin-jsx'
 import rollupPostcss from 'rollup-plugin-postcss'
 import sucrase from '@rollup/plugin-sucrase';
 import typescript from '@rollup/plugin-typescript';
 import { optimizeLodashImports } from "@optimize-lodash/rollup-plugin";
-// import myExample from './module/rollup-plugin-my-example.js';
-
-// import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-const path = require('path')
+import path from 'path';
 
 export default {
   input: './index.ts',
@@ -28,7 +24,6 @@ export default {
     name: '$message',
     sourcemap: true,
     globals: {
-      // lodash: '_',
     },
     generatedCode:{
       arrowFunctions:true
@@ -43,12 +38,10 @@ export default {
     buildDelay:300,
 
   },
-  // external: ['lodash'],
   plugins: [
     nodeResolve({
       extensions: ['.js', '.ts']
     }),
-    // jsx( {factory: 'React.createElement'} ),
     commonjs(),
     typescript({
       exclude:['dist/*','build/*'],
@@ -70,7 +63,6 @@ export default {
     }),
     // optimizeLodashImports({useLodashEs:true}),
     optimizeLodashImports(),
-
     // myExample()
 
   ],

@@ -56,7 +56,6 @@ interface resultType {
   id: String;
   domID: String;
   source: any;
-  // box: HTMLElement;
   [propName: string]: any;
 }
 interface optionType {

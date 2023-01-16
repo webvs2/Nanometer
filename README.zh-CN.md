@@ -7,13 +7,13 @@
 </div>
 
 <h2 align="centre">What is nanometer-message?</h2>
-* Every piece of information needs to be cherished.
-* A friendlier message prompt.
+*每一条消息都需要珍惜。
+*更友善的消息提示。
 <h2 align="left">Claims the melon<MessageBox有哪些功能？ ></h2>
 
-* Easy to use
-* Better message prompt, built-in four scenarios, support the use of custom
-* Add to your UI library for refinement
+* 简单易用
+* 更好的消息提示，内置四种场景，支持使用自定义
+* 添加到您的UI库用于完善
 
 <h2 align="left">Install</h2>
 Install with script:
@@ -29,6 +29,10 @@ Install with npm:
 cnpm i nanometer-message
 ```
 
+```bash
+npm i nanometer-message
+```
+
 <h2 align="left">Documentation</h2>
 
 * Common ant es6:
@@ -36,18 +40,18 @@ cnpm i nanometer-message
 ```js  
 var Message = require('nanometer-message')
 <link rel="stylesheet" type="text/css" href="dist/index.css" />
- Message({option})   A separate method is defined for each type，example: Message.success(options)。
+ Message({option})    为每个 type 定义了各自的方法，如 Message.success(options)。
 ```
 
-* Similar to vue:
+* 类似于vue:
 
 ```js
 import Message from 'nanometer-message';
 
-Vue.prototype.$meessage = Message 
+Vue.prototype.$meessage = Message  
 ```
 
- style
+style
 
 ```bash
 @import url('nanometer-message/dist/index.css');
@@ -55,6 +59,10 @@ Vue.prototype.$meessage = Message
 
 ```bash
  Message(type, context)
+```
+
+```bash
+Message.success(context)。
 ```
 
 ```bash
@@ -74,8 +82,8 @@ Vue.prototype.$meessage = Message
 |[destroy]| A callback after the message has disappeared |
 
 <h2 align="left">Contact the author</h2>
-Get involved and get better
-* Submit issues<https://github.com/webvs2/Nanometer/issues>
-* Visit the github address <a herf="https://github.com/webvs2/Nanometer"> https://github.com/webvs2/Nanometer</a>
+
+* 提交issues<https://github.com/webvs2/Nanometer/issues>
+* 请访问 github地址 <a herf="https://github.com/webvs2/Nanometer"> https://github.com/webvs2/Nanometer</a>
 
 <h2 align="left">Grateful to members</h2>

@@ -23,7 +23,6 @@ let output={
 }
 config.output=Object.assign({},config.output,output)
 config.plugins=config.plugins.concat([
-    // css(),
     terser({
         compress: {
             drop_console: true,
@@ -31,8 +30,7 @@ config.plugins=config.plugins.concat([
             pure_funcs: ['console.log'] // 移除console
         }
     }),
-    // myExample()
-    // analyze(),
+
 ])
 
 
