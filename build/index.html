@@ -9,8 +9,8 @@
     <title>message</title>
     <link rel="stylesheet" href="./index.css">
     <script src="./index.js"></script>
-    <script src="../src/assets/logo/iconfont.js"></script>
-    <link rel="stylesheet" href="../src/assets/source-code-pro-release/source-code-pro.css">
+    <script src="./assets/logo/iconfont.js"></script>
+    <link rel="stylesheet" href="./assets/source-code-pro-release/source-code-pro.css">
     <style>
         html,
         body {
@@ -37,7 +37,6 @@
     <svg class="icon" aria-hidden="true">
         <use xlink:href="#icon-tianqi"></use>
       </svg>
-    <!-- <img src="../src/assets/img/rain.png"> -->
     <h1 style=" text-align: center;margin-top: 20px; ">nan-message</h1>
     <h3 style="color: #ba7ba1;">This is an amusement park</h3>
     <!-- <span style="display: inline-block;font-size: 12px;font-family: 'Courier New', Courier, monospace;margin-left: 20px;color: #333;" >rollup Support development </span> -->
@@ -58,7 +57,8 @@
         let a = 1;
         $message({
             type: 'success',
-            context: 'Quotes of the day',
+            content: 'Quotes of the day',
+            durationTime:2000000,
             destroy: function () {
                 console.log('Whatever I believed, I did; and whatever I did, I did with my whole heart and mind.')
             }
@@ -68,7 +68,7 @@
             $message({
                 type: 'success',
                 egoClass: 'yang',
-                context: '成功了',
+                content: '成功了',
                 postEvent: function () {
                     console.log('终于成功了')
                 }

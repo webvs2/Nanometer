@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3864811 */
+  src: url('iconfont.woff2?t=1673832031668') format('woff2'),
+       url('iconfont.woff?t=1673832031668') format('woff'),
+       url('iconfont.ttf?t=1673832031668') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-xiaoxi:before {
+  content: "\e691";
+}
+

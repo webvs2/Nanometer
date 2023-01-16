@@ -8,6 +8,8 @@ import postcss from 'postcss'
 import autoprefixer from 'autoprefixer'
 // import dev from 'rollup-plugin-dev'
 // import livereload from 'rollup-plugin-livereload'
+import css from "rollup-plugin-import-css";
+
 import rollupPostcss from 'rollup-plugin-postcss'
 import sucrase from '@rollup/plugin-sucrase';
 import typescript from '@rollup/plugin-typescript';
@@ -61,6 +63,7 @@ export default {
       ],
       sass: require('sass')
     }),
+    css(),
     // optimizeLodashImports({useLodashEs:true}),
     optimizeLodashImports(),
     // myExample()

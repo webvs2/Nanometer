@@ -15,8 +15,8 @@ let render = (obj: objType, root?: HTMLElement) => {
       el.setAttribute(item, property || obj.attr?.[item]);
     });
   }
-  if (typeof obj.children == "string" ) {
-    const text = document.createTextNode(obj.children);
+  if (typeof obj.children == "string"||typeof obj.children == "number" ) {
+    const text = document.createTextNode(String(obj.children) );
     el.appendChild(text);
   } else if (obj.children) {
     console.log(" obj.children", obj.children);

@@ -1,6 +1,6 @@
 "use strict";
 import "./src/css/index.scss";
-// import { filter, delay } from "lodash";
+import { cloneDeep } from "lodash";
 import render from "./src/render";
 class storeSteward {
   store: any[] = [];
@@ -29,7 +29,7 @@ class storeSteward {
       );
       clearTimeout(pastDue[index]);
       pastDue[index] = null;
-    }, source.animationDuration);
+    }, source.durationTime);
   }
   closeAll() {
     let { pastDue } = this;
@@ -46,7 +46,6 @@ class storeSteward {
       }
     });
   }
-
 }
 let store = new storeSteward([]);
 
@@ -60,44 +59,54 @@ interface resultType {
 }
 interface optionType {
   type: string;
-  animationDuration: number; //ms
-  egoClass?: string;
-  context?: string;
+  durationTime: number; //ms
+  class?: string;
+  content?: string;
   postEvent: null;
 }
 
 class MessageClass {
-  option = {
+  defaultOption= {
     type: "info",
-    animationDuration: 1000, //ms
+    durationTime: 1000, //ms
     postEvent: null,
-    egoClass: "",
+    class: "",
+  };
+  option = {
   } as optionType;
   seed: number = 0;
   isContainer: boolean = false;
   containerDom: HTMLElement;
-  constructor(option) {
-    // process.ENV
-    if (false) {
-      console.log("thanks!😄");
-    }
-  }
+  constructor(option) {}
   alteration(option) {
-    this.option = Object.assign({}, this.option, option);
+    this.option = Object.assign({},this.defaultOption, option);
     this.establish();
   }
   establish() {
-    let { option, seed } = this;
-    console.log('this',this)
-    if (!option.context)
-      throw '[message] If you use the object argument form, be aware!"Context" is required';
+    let { seed,option } = this;
+    if (!option.content)
+      throw '[message] If you use the object argument form, be aware!"content" is required';
     let id = "message_" + seed++;
     function MessageConstructor(data: {}): resultType {
       const elem = render({
         tag: "div",
-        children: option.context,
+        children: [
+
+          {
+            tag: "span",
+            attr: {
+              class: "iconfont nan-icon  icon-xiaoxi",
+            },
+          },
+          {
+            tag:'span',
+            children:option.content
+          }
+        ],
+
+        // option.content,
         attr: {
-          class: `alert-${option.type} nan-alert enter ${option.egoClass} `,
+          class: `alert-${option.type} nan-alert enter ${option.class} `,
           id: id,
           style: { zindex: 100 + seed },
         },
@@ -112,8 +121,8 @@ class MessageClass {
     }
     //	 Generate and add to the body...
     let messageBox = MessageConstructor(option);
-    let { source, dom, containerDom } = messageBox;
-    source.animationDuration = source.animationDuration + seed * 60;
+    let { source, dom } = messageBox;
+    source.durationTime = source.durationTime + seed * 60;
     store.push(messageBox);
     document.body.appendChild(dom);
   }
@@ -126,13 +135,13 @@ let message = (...data: any[]) => {
       ? data[0]
       : {
           type: data[0],
-          context: data[1],
+          content: data[1],
         }
   );
 };
 new Array("success", "warning", "info", "error").map((item, index) => {
   message[item] = (value: any) => {
-    MessageBox.alteration({ type: item, context: value });
+    MessageBox.alteration({ type: item, content: value });
   };
 });
 export default message;

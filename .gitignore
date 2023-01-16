@@ -1,6 +1,7 @@
 .DS_Store
 node_modules
 build/*.css
+build/assets
 build/*.js
 *.log
 explorations

@@ -1,1 +1,108 @@
-.flicker{animation-duration:1s;animation-name:flicker;animation-iteration-count:infinite}@keyframes flicker{0%{opacity:0;box-shadow:0 2px 12px 0 rgba(209,17,17,.1)}100%{box-shadow:0 2px 12px 0 rgba(209,17,17,.5)}}@keyframes entry{0%{opacity:0;transform:translateY(-25px)}100%{opacity:1;box-shadow:0 2px 12px 0 rgba(0,0,0,.2);transform:translateY(20px)}}@keyframes out{0%{opacity:1;transform:translateY(20px)}100%{opacity:0;transform:translateY(-25px)}}:root{--base-font-color: #303133;--nan-succeed-color: #72e985;--nan-error-color: #ce4a4e;--nan-text-align: left;--nan-padding: 12px 18px;--nan-animation-duration: 0.5s}.nan-alert{font-size:14px;min-width:380px;display:inline-block;margin:0 auto;padding:var(--nan-padding);text-align:var(--nan-text-align);border-radius:6px;position:absolute;top:0px;left:50%;right:50%;translate:-50% 0;overflow:hidden}.nan-alert::after{content:" ";width:100px;height:100px;background-color:#ce4a4e}.enter{opacity:0;animation-duration:.4s;animation-timing-function:ease;animation-name:entry;animation-fill-mode:forwards}.out{animation-duration:var(--nan-animation-duration);animation-timing-function:cubic-bezier(0.38, 0.63, 0.56, 0.92);animation-name:out}.alert-success{background-color:#00c9a7;color:#fff}.alert-warning{background-color:#ffa963;color:#fff}.alert-info{color:var(--base-font-color) !important;background-color:#edf2fc;color:#fff}.alert-error{background-color:#ce4a4e;color:#fff}
+@import url("../assets/icon/iconfont.css");
+.flicker {
+  animation-duration: 1s;
+  animation-name: flicker;
+  animation-iteration-count: infinite;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0;
+    box-shadow: 0 2px 12px 0 rgba(209, 17, 17, 0.1);
+  }
+  100% {
+    box-shadow: 0 2px 12px 0 rgba(209, 17, 17, 0.5);
+  }
+}
+@keyframes entry {
+  0% {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  100% {
+    opacity: 1;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.2);
+    transform: translateY(20px);
+  }
+}
+@keyframes out {
+  0% {
+    opacity: 1;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+}
+:root {
+  --base-font-color: #303133;
+  --nan-succeed-color: #72e985;
+  --nan-error-color: #ce4a4e;
+  --nan-text-align: left;
+  --nan-padding: 12px 18px;
+  --nan-animation-duration: 0.5s;
+}
+
+.nan-alert {
+  font-size: 14px;
+  min-width: 380px;
+  display: inline-block;
+  margin: 0 auto;
+  padding: var(--nan-padding);
+  text-align: var(--nan-text-align);
+  border-radius: 6px;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  right: 50%;
+  translate: -50% 0;
+  overflow: hidden;
+}
+.nan-alert::after {
+  content: " ";
+  width: 100px;
+  height: 100px;
+  background-color: #ce4a4e;
+}
+
+.enter {
+  opacity: 0;
+  animation-duration: 0.4s;
+  animation-timing-function: ease;
+  animation-name: entry;
+  animation-fill-mode: forwards;
+}
+
+.out {
+  animation-duration: var(--nan-animation-duration);
+  animation-timing-function: cubic-bezier(0.38, 0.63, 0.56, 0.92);
+  animation-name: out;
+}
+
+.alert-success {
+  background-color: #00c9a7;
+  color: #fff;
+}
+
+.alert-warning {
+  background-color: #ffa963;
+  color: #fff;
+}
+
+.alert-info {
+  color: var(--base-font-color) !important;
+  background-color: #edf2fc;
+  color: #fff;
+}
+
+.alert-error {
+  background-color: #ce4a4e;
+  color: #fff;
+}
+
+.nan-icon {
+  font-size: 20px;
+  display: inline-block;
+  color: red;
+}

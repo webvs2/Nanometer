@@ -69,13 +69,13 @@ Vue.prototype.$meessage = Message
 |:--:|:----------|
 |[type]|The current state of the message. [success,warning,info,error]|
 |[animationDuration]|Buffer animation duration(The default for 3 seconds)|
-|[egoClass]|CSS state customization|
-|[context]| Message content.Please note: this is a must|
-|[destroy]| A callback after the message has disappeared |
+|[calss]| (egoClass abandoned,Use this instead)   CSS state customization|
+|[content]| (context abandoned,Use this instead ) Message content.Please note: this is a must|
+|[postEvent]| (destroy abandoned,Use this instead )  A callback after the message has disappeared |
 
 <h2 align="left">Contact the author</h2>
-Get involved and get better
-* Submit issues<https://github.com/webvs2/Nanometer/issues>
-* Visit the github address <a herf="https://github.com/webvs2/Nanometer"> https://github.com/webvs2/Nanometer</a>
+<p>Get involved and get better</p>
+<p> * Submit issues<https://github.com/webvs2/Nanometer/issues> </p>
+<p>* Visit the github address <a herf="https://github.com/webvs2/Nanometer"> https://github.com/webvs2/Nanometer</a></p>
 
 <h2 align="left">Grateful to members</h2>
