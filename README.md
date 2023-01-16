@@ -47,12 +47,6 @@ import Message from 'nanometer-message';
 Vue.prototype.$meessage = Message 
 ```
 
- style
-
-```bash
-@import url('nanometer-message/dist/index.css');
-```
-
 ```bash
  Message(type, context)
 ```
@@ -60,6 +54,12 @@ Vue.prototype.$meessage = Message
 ```bash
  Message({option})
 ```
+ style
+
+```bash
+@import url('nanometer-message/dist/index.css');
+```
+
 
 <h2 align="left">API</h2>
 
