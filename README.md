@@ -5,11 +5,12 @@
 <p>Not everyone can be a great artist, but future artists can come from any corner</p>
 
 </div>
+<div>
 English|[简体中文]([https://github.com/webvs2/Nanometer/blob/master/README.zh-CN.md]) 
-
+</div>
 <h2 align="centre">What is nanometer-message?</h2>
-*Every piece of information needs to be cherished.
-* A friendlier message prompt.
+* ✨Every piece of information needs to be cherished.
+* 🎉A friendlier message prompt.
 <h2 align="left">Claims the melon<MessageBox有哪些功能？ ></h2>
 
 * Easy to use
