@@ -49,17 +49,17 @@ import Message from 'nanometer-message';
 Vue.prototype.$meessage = Message 
 ```
 
-```bash
+```js
  Message(type, context)
 ```
 
-```bash
+```js
  Message({option})
 ```
 
  style
 
-```bash
+```sass
 @import url('nanometer-message/dist/index.css');
 ```
 
@@ -77,7 +77,7 @@ Vue.prototype.$meessage = Message
 
 <h2 align="left">Contact the author</h2>
 <p>Get involved and get better</p>
-<p> *Submit issues<https://github.com/webvs2/Nanometer/issues> </p>
-<p>* Visit the github address <a herf="https://github.com/webvs2/Nanometer"> https://github.com/webvs2/Nanometer</a></p>
+<p> *  Submit issues<https://github.com/webvs2/Nanometer/issues> </p>
+<p> *  Visit the github address <a herf="https://github.com/webvs2/Nanometer"> https://github.com/webvs2/Nanometer</a></p>
 
 <h2 align="left">Grateful to members</h2>
