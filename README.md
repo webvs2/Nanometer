@@ -6,7 +6,7 @@
 
 </div>
 <div>
-English|[简体中文]([https://github.com/webvs2/Nanometer/blob/master/README.zh-CN.md]) 
+English|[简体中文](https://github.com/webvs2/Nanometer/blob/master/README.zh-CN.md) 
 </div>
 <h2 align="centre">What is nanometer-message?</h2>
 * ✨Every piece of information needs to be cherished.
