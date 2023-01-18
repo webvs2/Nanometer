@@ -1,7 +1,8 @@
 //rollup.dev.config.js
 // let listenersPath
-import config from './rollup.config'
-const rollup = require('rollup');
+import config from './rollup.config.js'
+// const rollup = require('rollup');
+// import rollup from "rollup"
 import serve from 'rollup-plugin-serve'
 import livereload from 'rollup-plugin-livereload'
 const html = require('@rollup/plugin-html');
