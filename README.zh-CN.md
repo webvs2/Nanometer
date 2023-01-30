@@ -5,7 +5,7 @@
 <p>Not everyone can be a great artist, but future artists can come from any corner</p>
 
 </div>
-[English](./README.md) | 简体中文
+[English](https://github.com/webvs2/Nanometer/blob/master/README.md)  | 简体中文
 
 <h2 align="centre">What is nanometer-message?</h2>
 *每一条消息都需要珍惜。
