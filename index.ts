@@ -23,7 +23,6 @@ class storeSteward {
         function () {
           source.postEvent?.();
           document.body.removeChild(dom);
-          // console.log("timebomb", pastDue);
         },
         false
       );
