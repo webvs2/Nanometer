@@ -30,7 +30,7 @@ export default {
       arrowFunctions:true
     }
   },
-  cache:true,
+  // cache:true,
   watch: {
     include: ['index.ts','src/**'],
     exclude: 'node_modules/**',

@@ -13,21 +13,21 @@
 @mixin alert-theme($color, $bkColor, $side) {
   background-color: $bkColor;
   color: #fdfbfb;
-  .nan-icon{
-    color:$color;
+  .nan-icon {
+    color: $color;
     font-weight: 400;
   }
   // border: solid $side 1px;
 }
-.center{
-  --nan-justify-content:center;
+.center {
+  --nan-justify-content: center;
 }
 .nan-alert {
   font-size: 14px;
   min-width: 380px;
   display: flex;
-  justify-content:var(--nan-justify-content);
-  align-items:baseline ;
+  justify-content: var(--nan-justify-content);
+  align-items: baseline;
   margin: 0 auto;
   padding: var(--nan-padding);
   text-align: var(--nan-text-align);
@@ -40,20 +40,16 @@
   translate: (-50% 0);
   overflow: hidden;
 
-  &::after {
-    // content: " ";
-    // width: 100px;
-    // height: 100px;
-    // background-color: #ce4a4e;
-  }
 }
-
 .enter {
   opacity: 0;
   animation-duration: 0.4s;
   animation-timing-function: ease;
   animation-name: entry;
   animation-fill-mode: forwards;
+    &:hover {
+      animation-play-state: paused;
+    }
 }
 
 .out {
@@ -61,10 +57,9 @@
   animation-timing-function: cubic-bezier(0.38, 0.63, 0.56, 0.92);
   animation-name: out;
 }
-// box-shadow: 0 2px 12px 0 rgba(209, 17, 17, 0.5);
 
 .alert-success {
-  @include alert-theme(#4FFBDF, #5eccad, var(--nan-succeed-color));
+  @include alert-theme(#4ffbdf, #5eccad, var(--nan-succeed-color));
 }
 
 .alert-warning {
@@ -79,7 +74,7 @@
 .alert-error {
   @include alert-theme(#fef0f0, #ce4a4e, var(--nan-error-color));
 }
-.nan-icon{
+.nan-icon {
   font-size: 18px;
   font-weight: 400;
   display: inline-block;

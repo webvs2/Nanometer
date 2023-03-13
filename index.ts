@@ -61,7 +61,7 @@ class MessageClass {
       return {
         dom: elem,
         id: id,
-        domID: "#" + id,
+        domID: `#${id}`,
         source: data,
       } as resultType;
     }
