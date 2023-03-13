@@ -5,11 +5,12 @@
 <p>Not everyone can be a great artist, but future artists can come from any corner</p>
 
 </div>
-English|[简体中文]([https://github.com/webvs2/Nanometer/blob/master/README.zh-CN.md]) 
+
+English   |  [简体中文](https://github.com/webvs2/Nanometer/blob/master/README.zh-CN.md) 
 
 <h2 align="centre">What is nanometer-message?</h2>
-*Every piece of information needs to be cherished.
-* A friendlier message prompt.
+* ✨Every piece of information needs to be cherished.
+* 🎉A friendlier message prompt.
 <h2 align="left">Claims the melon<MessageBox有哪些功能？ ></h2>
 
 * Easy to use
@@ -48,17 +49,17 @@ import Message from 'nanometer-message';
 Vue.prototype.$meessage = Message 
 ```
 
-```bash
+```js
  Message(type, context)
 ```
 
-```bash
+```js
  Message({option})
 ```
 
  style
 
-```bash
+```sass
 @import url('nanometer-message/dist/index.css');
 ```
 
@@ -76,7 +77,7 @@ Vue.prototype.$meessage = Message
 
 <h2 align="left">Contact the author</h2>
 <p>Get involved and get better</p>
-<p> *Submit issues<https://github.com/webvs2/Nanometer/issues> </p>
-<p>* Visit the github address <a herf="https://github.com/webvs2/Nanometer"> https://github.com/webvs2/Nanometer</a></p>
+<p> *  Submit issues<https://github.com/webvs2/Nanometer/issues> </p>
+<p> *  Visit the github address <a herf="https://github.com/webvs2/Nanometer"> https://github.com/webvs2/Nanometer</a></p>
 
 <h2 align="left">Grateful to members</h2>
