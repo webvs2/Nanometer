@@ -39,6 +39,10 @@
   right: 50%;
   translate: (-50% 0);
   overflow: hidden;
+  span {
+   display: inline-block;
+   vertical-align: middle;
+  }
 
 }
 .enter {
@@ -78,5 +82,6 @@
   font-size: 18px;
   font-weight: 400;
   display: inline-block;
-  margin-right: 10px;
+  vertical-align: middle;
+  margin-right: 6px;
 }

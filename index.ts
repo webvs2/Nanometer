@@ -30,10 +30,10 @@ class MessageClass {
   }
   establish() {
     let { seed, option } = this;
-
+    this.seed++
     if (!option.content)
       throw '[message] If you use the object argument form, be aware!"content" is required';
-    let id = "message_" + seed++;
+    let id = "message_" + seed;
     function MessageConstructor(data: {}): resultType {
       const elem = render({
         tag: "div",
@@ -41,7 +41,7 @@ class MessageClass {
           {
             tag: "i",
             attr: {
-              class: "iconfont nan-icon icon-xiaoxi1",
+              class: `iconfont nan-icon icon-${option.type}`,
             },
           },
           {
@@ -68,13 +68,14 @@ class MessageClass {
     //	 Generate and add to the body🐱‍🏍...
     let messageBox = MessageConstructor(option);
     let { source, dom } = messageBox;
-    source.durationTime = source.durationTime + seed * 60+(typeof option.content ==="string"?option.content.length*6:0);
+    source.durationTime = source.durationTime + seed * 100+ (typeof option.content ==="string"?option.content.length*6:0);
     store.push(messageBox);
     document.body.appendChild(dom);
   }
 }
 
 let MessageBox = new MessageClass({});
+
 let message = (...data: any[]) => {
   MessageBox.alteration(
     data.length < 2
@@ -85,6 +86,8 @@ let message = (...data: any[]) => {
         }
   );
 };
+// let MessageBox = new MessageClass({});
+
 new Array("success", "warning", "info", "error").map((item, index) => {
   message[item] = (value: any) => {
     MessageBox.alteration({ type: item, content: value });
