@@ -8,7 +8,7 @@ import postcss from 'postcss'
 import autoprefixer from 'autoprefixer'
 // import dev from 'rollup-plugin-dev'
 // import livereload from 'rollup-plugin-livereload'
-import css from "rollup-plugin-import-css";
+// import css from "rollup-plugin-import-css";
 
 import rollupPostcss from 'rollup-plugin-postcss'
 import sucrase from '@rollup/plugin-sucrase';
@@ -22,7 +22,6 @@ export default {
   output: {
     file: path.join(__dirname, './build/index.js'),
     format: 'umd',
-    // dir:''
     name: '$message',
     sourcemap: true,
     globals: {
@@ -37,7 +36,7 @@ export default {
     exclude: 'node_modules/**',
     failAfterWarnings: true,
     clearScreen:false,
-    buildDelay:300,
+    buildDelay:100,
 
   },
   plugins: [
@@ -45,12 +44,12 @@ export default {
       extensions: ['.js', '.ts']
     }),
     commonjs(),
-    typescript({
-      exclude:['dist/*','build/*'],
-      include:['src/*','./index.ts']
-    }),
     babel({
       exclude: 'node_modules/**' 
+    }),
+    typescript({
+      exclude:['dist/*','build/*'],
+      include:['src/**','./index.ts']
     }),
     json(),
     // peerDepsExternal(),
@@ -63,11 +62,7 @@ export default {
       ],
       sass: require('sass')
     }),
-    css(),
-    // optimizeLodashImports({useLodashEs:true}),
     optimizeLodashImports(),
-    // myExample()
-
   ],
 
 };

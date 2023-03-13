@@ -1,21 +1,17 @@
 .flicker {
-  animation-duration: 1s;
-  // animation-timing-function: ease;
+  animation-duration: 1.2s;
   animation-name: flicker;
-  // animation-fill-mode: forwards;
   animation-iteration-count: infinite;
 }
 @keyframes flicker {
   0% {
-    opacity: 0;
-    // transform: translateY(-20px);
-    box-shadow: 0 2px 12px 0 rgba(209, 17, 17, 0.1);
+    opacity: 0.2;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
   }
 
   100% {
-    // opacity: 1;
-    box-shadow: 0 2px 12px 0 rgba(209, 17, 17, 0.5);
-    // transform: translateY(20px); // top: -100px;
+    opacity: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
   }
 }
 $startingPosition: 20px;

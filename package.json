@@ -34,7 +34,7 @@
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-sucrase": "^5.0.1",
-    "@rollup/plugin-typescript": "^8.5.0",
+    "@rollup/plugin-typescript": "^11.0.0",
     "@vue/compiler-sfc": "^3.2.37",
     "autoprefixer": "^10.4.7",
     "clean-webpack-plugin": "^4.0.0",
