@@ -25,7 +25,6 @@ class MessageClass {
   //class function🚩
   alteration(option) {
     this.option = Object.assign({}, this.defaultOption, option);
-    console.log('option',option)
     this.establish();
   }
   establish() {
@@ -76,7 +75,6 @@ class MessageClass {
 let MessageBox = new MessageClass({});
 
 let message = (...data: any[]) => {
-  console.log('data',data)
   MessageBox.alteration(
     data.length < 2
       ? data[0]
@@ -91,8 +89,4 @@ new Array("success", "warning", "info", "error").map((item, index) => {
     MessageBox.alteration({ type: item, content: value });
   };
 });
-export default function(data){
-  console.log('data',data)
-  message(data)
-  // return data
-};
+export default message
