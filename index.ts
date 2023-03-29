@@ -1,5 +1,4 @@
-"use strict";
-import "./src/css/index.scss";
+import "./src/styles/index.scss";
 // import { cloneDeep } from "lodash";
 import render from "./src/render";
 import { optionType, resultType } from "./src/type";
@@ -26,13 +25,13 @@ class MessageClass {
   //class function🚩
   alteration(option) {
     this.option = Object.assign({}, this.defaultOption, option);
+    console.log('option',option)
     this.establish();
   }
   establish() {
     let { seed, option } = this;
     this.seed++
-    if (!option.content)
-      throw '[message] If you use the object argument form, be aware!"content" is required';
+    if (!option.content) {throw '[message] If you use the object argument form, be aware!"content" is required';}
     let id = "message_" + seed;
     function MessageConstructor(data: {}): resultType {
       const elem = render({
@@ -77,6 +76,7 @@ class MessageClass {
 let MessageBox = new MessageClass({});
 
 let message = (...data: any[]) => {
+  console.log('data',data)
   MessageBox.alteration(
     data.length < 2
       ? data[0]
@@ -86,11 +86,13 @@ let message = (...data: any[]) => {
         }
   );
 };
-// let MessageBox = new MessageClass({});
-
 new Array("success", "warning", "info", "error").map((item, index) => {
   message[item] = (value: any) => {
     MessageBox.alteration({ type: item, content: value });
   };
 });
-export default message;
+export default function(data){
+  console.log('data',data)
+  message(data)
+  // return data
+};

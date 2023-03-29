@@ -23,5 +23,4 @@ config.plugins.push(
     }),
     livereload('build')
 )
-// console.log(config)
 export default config

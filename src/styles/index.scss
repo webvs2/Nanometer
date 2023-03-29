@@ -1,6 +1,6 @@
 @charset "utf-8";
 @import "./animation.scss";
-@import "../../src/assets/icon/iconfont.css";
+// @import "../assets/icon/iconfont.css";
 :root {
   --base-font-color: #303133;
   --nan-succeed-color: #72e985;
@@ -17,7 +17,6 @@
     color: $color;
     font-weight: 400;
   }
-  // border: solid $side 1px;
 }
 .center {
   --nan-justify-content: center;
