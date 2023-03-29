@@ -1,5 +1,4 @@
 import "./src/styles/index.scss";
-// import { cloneDeep } from "lodash";
 import render from "./src/render";
 import { optionType, resultType } from "./src/type";
 import { storeSteward } from "./src/store/index";

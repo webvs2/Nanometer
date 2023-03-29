@@ -6,8 +6,6 @@ const rimraf = require('rimraf');
 const _console = require('console-color-mr')
 import copy from 'rollup-plugin-copy'
 
-// import css from 'rollup-plugin-css-only'
-// import myExample from './src/rollup-plugin-my-example.js';
 rimraf('./dist/*', (err) => {
     if (err) {
         console.error(err)
@@ -16,19 +14,11 @@ rimraf('./dist/*', (err) => {
     }
 })
 
-// let output= outputGenerate  
-
-// {
-//     sourcemap:true,
-//     compact:true,
-//     file: path.join(__dirname, './dist/index.js'),
-
-// }
 config.output =  [{
     file: path.join(__dirname, './dist/index.js'),
     format: 'esm',
     name: '$message',
-    sourcemap: true,
+    sourcemap: false,
     generatedCode: {
       arrowFunctions: true
     }
@@ -36,7 +26,7 @@ config.output =  [{
     file: path.join(__dirname, './dist/index-umd.js'),
     format: 'umd',
     name: '$message',
-    sourcemap: true,
+    sourcemap: false,
     generatedCode: {
       arrowFunctions: true
     }
@@ -44,15 +34,17 @@ config.output =  [{
 config.plugins = config.plugins.concat([
     copy({
         targets: [
-            // { src: 'src/assets/rain.ico', dest: 'build/' },
-            { src: 'src/assets', dest: 'dist/' },
+            { src: 'src/assets/icon/iconfont.ttf', dest: 'dist/' },
+            { src: 'src/assets/icon/iconfont.woff', dest: 'dist/' },
+            { src: 'src/assets/icon/iconfont.woff2', dest: 'dist/' },
+
         ]
     }),
     terser({
         compress: {
             drop_console: true,
             drop_debugger: false,
-            // pure_funcs: ['console.log'] // 移除console
+            pure_funcs: ['console.log'] // 移除console
         }
     }),
 ])

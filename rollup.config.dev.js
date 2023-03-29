@@ -7,17 +7,25 @@ import livereload from 'rollup-plugin-livereload'
 import copy from 'rollup-plugin-copy'
 
 config.plugins.push(
+    // copy({
+    //     targets: [
+    //         { src: 'src/assets/rain.ico', dest: 'build/' },
+    //         // { src: 'src/assets', dest: 'build/' },
+    //         //   { src: ['src/assets', 'assets/fonts/arial.woff2'], dest: 'dist/public/fonts' },
+    //         //   { src: 'assets/images/**/*', dest: 'dist/public/images' }
+    //     ]
+    // }),
     copy({
         targets: [
-            { src: 'src/assets/rain.ico', dest: 'build/' },
-            { src: 'src/assets', dest: 'build/' },
-            //   { src: ['src/assets', 'assets/fonts/arial.woff2'], dest: 'dist/public/fonts' },
-            //   { src: 'assets/images/**/*', dest: 'dist/public/images' }
+            { src: 'src/assets/icon/iconfont.ttf', dest: 'build/' },
+            { src: 'src/assets/icon/iconfont.woff', dest: 'build/' },
+            { src: 'src/assets/icon/iconfont.woff2', dest: 'build/' },
         ]
     }),
     // html(),
     serve({
         open: true,
+        verbose: true,
         openPage: '/build/index.html',
         port: 520,
     }),
