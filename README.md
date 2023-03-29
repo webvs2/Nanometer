@@ -18,50 +18,37 @@ English   |  [简体中文](https://github.com/webvs2/Nanometer/blob/master/READ
 * Add to your UI library for refinement
 
 <h2 align="left">Install</h2>
-Install with script:
 
-```bash
-<script src="index.js"></script>
-<link rel="stylesheet" type="text/css" href="index.css" />
+Install with pnpm:
 ```
-
-Install with npm:
-
-```
-cnpm i nanometer-message
+pnpm add nanometer-message
 ```
 
 <h2 align="left">Documentation</h2>
 
-* Common ant es6:
+* Similar to script:
+
+```js
+<script src="./nanometer-message/index-umd.js"></script>
+Vue.prototype.$meessage = Message 
+```
+
+* COMMON ant ES6:
 
 ```js  
-var Message = require('nanometer-message')
+import message from "nanometer-message"
 <link rel="stylesheet" type="text/css" href="dist/index.css" />
  Message({option})   A separate method is defined for each type，example: Message.success(options)。
 ```
 
-* Similar to vue:
+* Similar to VUE2.X:
 
 ```js
-import Message from 'nanometer-message';
-
+import "nanometer-message/dist/index.css"
+import message from "nanometer-message"
 Vue.prototype.$meessage = Message 
 ```
 
-```js
- Message(type, context)
-```
-
-```js
- Message({option})
-```
-
- style
-
-```sass
-@import url('nanometer-message/dist/index.css');
-```
 
 <h2 align="left">API</h2>
 
