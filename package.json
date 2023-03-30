@@ -1,6 +1,6 @@
 {
   "name": "nanometer-message",
-  "version": "3.3.0",
+  "version": "4.0.0",
   "description": "Simple message prompts",
   "main": "dist/index.js",
   "module": "dist/index.js",
