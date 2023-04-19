@@ -18,57 +18,33 @@
 * 添加到您的UI库用于完善
 
 <h2 align="left">Install</h2>
-Install with script:
-
-```bash
-<script src="index.js"></script>
-<link rel="stylesheet" type="text/css" href="index.css" />
+Install with pnpm:
 ```
-
-Install with npm:
-
+pnpm add nanometer-message -S
 ```
-cnpm i nanometer-message
-```
-
-```bash
-npm i nanometer-message
-```
-
 <h2 align="left">Documentation</h2>
 
-* Common ant es6:
-
-```js  
-var Message = require('nanometer-message')
-<link rel="stylesheet" type="text/css" href="dist/index.css" />
- Message({option})    为每个 type 定义了各自的方法，如 Message.success(options)。
-```
-
-* 类似于vue:
+* Similar to script:
 
 ```js
-import Message from 'nanometer-message';
-
-Vue.prototype.$meessage = Message  
+<script src="https://github.com/webvs2/Nanometer/blob/master/dist/index.js"></script>
+ 
 ```
-```bash
- Message(type, context)
-```
+* COMMON ant ES6:
 
-```bash
-Message.success(context)。
-```
-
-```bash
- Message({option})
-```
-style
-
-```bash
-@import url('nanometer-message/dist/index.css');
+```js  
+import message from "nanometer-message"
+import "nanometer-message/dist/index.css"
+ Message({option}) 为每个 type 定义了各自的方法，如 Message.success(options)success(options)。
 ```
 
+* Similar to VUE2.X:
+
+```js
+import "nanometer-message/dist/index.css"
+import message from "nanometer-message"
+Vue.prototype.$meessage = Message 
+```
 
 
 <h2 align="left">API</h2>
@@ -77,11 +53,11 @@ style
 
 |Name|Description|
 |:--:|:----------|
-|[type]|The current state of the message. [success,warning,info,error]|
-|[durationTime]| (废弃 <s> animationDuration</s>，更换为 durationTime) Buffer animation duration(The default for 3 seconds)|
-|[egoClass]|(废弃 <s> egoClass</s>，更换为 class) CSS state customization|
-|[context]|(废弃 <s> context</s>，更换为 content) Message content.Please note: this is a must|
-|[destroy]| (废弃 <s>destroy</s>，更换为 postEvent)A callback after the message has disappeared |
+|[type]|The current state of the message. [success|warning|info|error]|
+|[durationTime]|  Buffer animation duration(The default for 3 seconds)|
+|[calss]|    CSS state customization|
+|[content]|  Message content.Please note: this is a must|
+|[postEvent]|  A callback after the message has disappeared |
 
 <h2 align="left">Contact the author</h2>
 

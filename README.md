@@ -9,8 +9,8 @@
 English   |  [简体中文](https://github.com/webvs2/Nanometer/blob/master/README.zh-CN.md) 
 
 <h2 align="centre">What is nanometer-message?</h2>
-* ✨Every piece of information needs to be cherished.
-* 🎉A friendlier message prompt.
+  * ✨Every piece of information needs to be cherished.<br />
+  * 🎉A friendlier message prompt.
 <h2 align="left">Claims the melon<MessageBox有哪些功能？ ></h2>
 
 * Easy to use
@@ -21,7 +21,7 @@ English   |  [简体中文](https://github.com/webvs2/Nanometer/blob/master/READ
 
 Install with pnpm:
 ```
-pnpm add nanometer-message
+pnpm add nanometer-message -S
 ```
 
 <h2 align="left">Documentation</h2>
@@ -29,7 +29,7 @@ pnpm add nanometer-message
 * Similar to script:
 
 ```js
-<script src="./nanometer-message/index-umd.js"></script>
+<script src="https://github.com/webvs2/Nanometer/blob/master/dist/index.js"></script>
 Vue.prototype.$meessage = Message 
 ```
 
@@ -37,7 +37,7 @@ Vue.prototype.$meessage = Message
 
 ```js  
 import message from "nanometer-message"
-<link rel="stylesheet" type="text/css" href="dist/index.css" />
+import "nanometer-message/dist/index.css"
  Message({option})   A separate method is defined for each type，example: Message.success(options)。
 ```
 
@@ -57,10 +57,10 @@ Vue.prototype.$meessage = Message
 |Name|Description|
 |:--:|:----------|
 |[type]|The current state of the message. [success|warning|info|error]|
-|[durationTime]| ( <s>animationDuration</s> abandoned ,Use this instead)  Buffer animation duration(The default for 3 seconds)|
-|[calss]| ( <s>egoClass</s> abandoned,Use this instead)   CSS state customization|
-|[content]| ( <s>context</s> abandoned,Use this instead ) Message content.Please note: this is a must|
-|[postEvent]| (<s>destroy</s> abandoned,Use this instead )  A callback after the message has disappeared |
+|[durationTime]|  Buffer animation duration(The default for 3 seconds)|
+|[calss]|    CSS state customization|
+|[content]|  Message content.Please note: this is a must|
+|[postEvent]|  A callback after the message has disappeared |
 
 <h2 align="left">Contact the author</h2>
 <p>Get involved and get better</p>
